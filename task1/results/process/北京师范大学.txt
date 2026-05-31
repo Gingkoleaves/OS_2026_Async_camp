@@ -1,0 +1,718 @@
+<!doctype html>
+<html><head><meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+<meta name="format-detection" content="telephone=no"> <!-- <meta name="renderer" content="webkit"> --> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<title>北京师范大学</title> 
+<link href="css/animate.css?v=1780161406003" rel="stylesheet"> 
+<link rel="stylesheet" href="css/style.css?v=1780161406003"> 
+<link rel="stylesheet" href="css/banner.css?v=1780161406003"> 
+<link rel="stylesheet" href="css/animate.css?v=1780161406003"> 
+<link rel="stylesheet" href="css/index.css?v=1780161406003"> 
+<link rel="shortcut icon" href="images/favicon.ico"> <!--[if lt IE 9]>
+<script src="js/html5.js?v=1780161406003"  type="text/javascript"></script>
+</script>
+<![endif]--><meta name="author" content="" /><meta name="description" content="" /><meta name="keywords" content="" /><link rel='shortcut icon' href=''><script type='text/javascript' src='/publish/gPublic/all.js?v=1780161406003'></script></head><body >
+<!--header开始-->
+
+
+<header class="header" >
+    <div class="serWrap">
+        <div id="ser">
+            <div class="ser" >
+                <form name="dataForm" class="search" action="/cms/web/search/index.jsp" target="_blank" method="post" accept-charset="utf-8" onSubmit="document.charset='utf-8';">
+                    <input name="siteID" value="57" type ="hidden">
+                    <input class="notxt" value="search" name="query" type="text" id="keywords" onFocus="if(value==defaultValue){value='';}" onBlur="if(!value){value=defaultValue;}"
+                     onclick="if(this.value==''){this.value='';this.form.keywords.style.color='#444'}">
+                    <input class="notxt1" name="Submit" type="submit" value="搜索" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="topWrap">
+      <div class="top">
+          <div class="top_lf">
+              <a href="https://one.bnu.edu.cn" target="_blank">信息门户</a><span>|</span> 
+              <a href="http://xxgk.bnu.edu.cn/" target="_blank">信息公开</a><span>|</span> 
+              <a href="lxxld/index.htm" target="_blank">联系校领导</a><span>|</span> 
+              <a href="https://email.bnu.edu.cn/" target="_blank">教师邮箱</a><span>|</span>
+              <a href="https://www.mail.bnu.edu.cn/  " target="_blank">学生邮箱</a><span>|</span>
+         <a href="https://pan.bnu.edu.cn/  " target="_blank">师大云盘</a>
+          </div>
+          <div class="top_rt">
+              <a href="http://news.bnu.edu.cn/" target="_blank">师大新闻</a><span>|</span> 
+              <a href="http://english.bnu.edu.cn/" target="_blank">English Version</a><span>|</span> 
+              <a href=" http://xyh.bnu.edu.cn/" target="_blank">校友之家</a><span>|</span> 
+  <a href="http://www.bnuzh.edu.cn/" target="_blank">珠海校区</a>               <a class="serBtn" href="javascript:void(0)"> </a>
+          </div>
+      </div>
+    </div>
+    <div class="nav-wrapper">
+        <div class="logo"><a href="index.htm"><img src="images/logo1.png" alt=""></a></div>
+        <div class="logo_bg"><img src="images/logo_bg.png" alt=""></div>
+        <div class="nav" id="nav">
+            <ul class="nav_lf">        
+                <li><a href="xxgk/index.htm">学校概况</a>
+            <dl class="subNav  ">
+                      <dd><a href="xxgk/xxjj/index.htm">学校简介</a></dd>
+                      <dd><a href="xxgk/xsyg/index.htm">校史沿革</a></dd>
+                      <dd><a href="xxgk/xrld/index.htm">现任领导</a></dd>
+                      <dd><a href="xxgk/lrld/index.htm">历任领导</a></dd>
+                      <dd><a href="xxgk/zmxz/index.htm">著名学者</a></dd>
+                      <dd><a href="xxgk/lsmr/index.htm">名师先贤</a></dd>
+                    </dl>
+        </li>
+                <li><a href="zzjg/index.htm">组织机构</a></li>
+                <li><a href="xbyx/index.htm">学部院系</a></li>
+                <li><a href="jyjx/index.htm">教育教学</a>
+                  <dl class="subNav  ">
+                      <dd><a href="http://jwb.bnu.edu.cn/" target="_blank">本科生教育</a></dd>
+                      <dd><a href="http://jwb.bnu.edu.cn/" target="_blank">研究生教育</a></dd>
+                      <dd><a href="http://iso.bnu.edu.cn/" target="_blank">留学生教育</a></dd>
+                      <dd><a href="jyjx/1/index.htm" target="_blank">继续教育</a></dd>
+                  </dl>
+                </li>
+                <li><a href="https://keyanyuan.bnu.edu.cn/">科学研究</a></li>
+            </ul>
+            <ul class="nav_rt">        
+                <li><a href="zsjy/index.htm">招生就业</a>
+                   <dl class="subNav">
+                      <dd><a href="http://admission.bnu.edu.cn/" target="_blank">本科生招生</a></dd>
+                      <dd><a href="http://yz.bnu.edu.cn/" target="_blank">研究生招生</a></dd>
+                      <dd><a href="https://admission-is.bnu.edu.cn/" target="_blank">留学生招生</a></dd>
+                      <dd><a href="http://career.bnu.edu.cn/" target="_blank">就业创业</a></dd>
+                  </dl>
+        </li>
+                <li><a href="https://hr.bnu.edu.cn/" target="_blank">人才招聘</a></li>
+                <li><a href="hzjl/index.htm">合作交流</a>
+                   <dl class="subNav">
+                      <dd><a href="http://oiec.bnu.edu.cn/" target="_blank">国际交流与合作</a></dd>
+                      <dd><a href="javascript:void(0);">国内合作</a></dd>
+                      <dd><a href="http://www.bnuef.org/" target="_blank">教育基金会</a></dd>
+                 
+                      <dd><a href="http://aiccc.bnu.edu.cn" target="_blank">中国文化国际传播研究院</a></dd>
+                  </dl>
+                </li>
+                <li><a href="tsda/index.htm">图书档案</a>
+                  <dl class="subNav">
+                      <dd><a href="http://www.lib.bnu.edu.cn/" target="_blank">图书馆</a></dd>
+                      <dd><a href="http://dangan.bnu.edu.cn/" target="_blank">档案馆</a></dd>
+                  </dl>
+                </li>
+                <li><a href="xysh/index.htm">校园生活</a></li>
+            </ul>
+        </div>
+    </div>
+    <span class="black_bg01"></span>
+    <!-- 移动端主导航 -->
+    <section class="mobile">
+        <div class="mobile-inner-header">
+            <h3 class="mobile_title"><a href="http://email.bnu.edu.cn/" target="_blank">教师邮箱</a><a href="https://www.mail.bnu.edu.cn/" target="_blank">学生邮箱</a></h3>
+      <!-- 0331开始 -->
+            <!-- <div class="mobile-inner-header-icon mobile-inner-header-icon-out">
+            <span></span><span></span><span></span></div> -->
+            <div class="mobile-inner-header-icon mobile-inner-header-icon-out">
+            <span class="mobile_home">导航</span></div>
+            <!-- 0331结束 -->
+          </div>
+          <div class="mobile-inner-nav">
+            <ul>
+                <li><a href="index.htm">首页</a></li>
+                <li><a href="xxgk/index.htm">学校概况</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+            <dd><a href="xxgk/xxjj/index.htm">学校简介</a></dd>
+            <dd><a href="xxgk/xsyg/index.htm">校史沿革</a></dd>
+            <dd><a href="xxgk/xrld/index.htm">现任领导</a></dd>
+            <dd><a href="xxgk/lrld/index.htm">历任领导</a></dd>
+            <dd><a href="xxgk/zmxz/index.htm">著名学者</a></dd>
+            <dd><a href="xxgk/lsmr/index.htm">名师先贤</a></dd>
+                    </dl>
+                </li>
+                <li><a href="zzjg/index.htm">组织机构</a></li>
+                <li><a href="xbyx/index.htm">学部院系</a></li>
+        <li><a href="jyjx/index.htm">教育教学</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+            <dd><a href="http://jwb.bnu.edu.cn/" target="_blank">本科生教育</a></dd>
+            <dd><a href="http://jwb.bnu.edu.cn/" target="_blank">研究生教育</a></dd>
+            <dd><a href="http://iso.bnu.edu.cn/" target="_blank">留学生教育</a></dd>
+            <dd><a href="jyjx/1/index.htm" target="_blank">继续教育</a></dd>
+                    </dl>
+                </li>
+        <li><a href="https://keyanyuan.bnu.edu.cn/">科学研究</a></li>
+                <li><a href="zsjy/index.htm">招生就业</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+            <dd><a href="http://admission.bnu.edu.cn/" target="_blank">本科生招生</a></dd>
+            <dd><a href="http://yz.bnu.edu.cn/" target="_blank">研究生招生</a></dd>
+            <dd><a href="https://admission-is.bnu.edu.cn/" target="_blank">留学生招生</a></dd>
+            <dd><a href="http://career.bnu.edu.cn/" target="_blank">就业创业</a></dd>
+                    </dl>
+                </li>
+        <li><a href="https://hr.bnu.edu.cn/" target="_blank">人才招聘</a></li>
+        <li><a href="hzjl/index.htm">合作交流</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+            <dd><a href="http://oiec.bnu.edu.cn/" target="_blank">国际交流与合作</a></dd>
+            <dd><a href="javascript:void(0);">国内合作</a></dd>
+            <dd><a href="http://www.bnuef.org/" target="_blank">教育基金会</a></dd>
+        
+                    </dl>
+                </li>
+        <li><a href="tsda/index.htm">图书档案</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+            <dd><a href="http://www.lib.bnu.edu.cn/" target="_blank">图书馆</a></dd>
+            <dd><a href="http://dangan.bnu.edu.cn/" target="_blank">档案馆</a></dd>
+                    </dl>
+                </li>
+        <li><a href="xysh/index.htm">校园生活</a></li>
+            </ul>
+      <div class="mobile-links">
+                <span><a href="https://one.bnu.edu.cn" target="_blank">信息门户</a></span>
+                <span><a href="http://xxgk.bnu.edu.cn/" target="_blank">信息公开</a></span>
+                <span><a href="lxxld/index.htm" target="_blank">联系校领导</a></span>
+                <span><a href="http://news.bnu.edu.cn/" target="_blank">师大新闻</a></span>
+                <span><a href="http://english.bnu.edu.cn/" target="_blank">English Version</a></span>
+                <span><a href="http://xyh.bnu.edu.cn/" target="_blank">校友之家</a></span>
+       <span><a href="http://www.bnuzh.edu.cn/" target="_blank">珠海校区</a></span>
+     <span><a href="https://pan.bnu.edu.cn/" target="_blank">师大云盘</a></span>
+          </div>
+            <!-- <div class="mobile_links">
+                <a href=""></a><span></span><a href="#"></a>
+            </div> -->
+            <div class="mobile_search">
+                <form name="dataForm" class="search" action="/cms/web/search/index.jsp" target="_blank" method="post" accept-charset="utf-8" onSubmit="document.charset='utf-8';">
+                    <input name="siteID" value="57" type ="hidden">
+                    <input class="notxt1" name="Submit" type="submit" value="" />
+                    <input class="notxt" value="search" name="query" type="text" id="keywords" onFocus="if(value==defaultValue){value='';}" onBlur="if(!value){value=defaultValue;}"
+                     onclick="if(this.value==''){this.value='';this.form.keywords.style.color='#666'}">
+                </form>
+            </div>
+          </div>
+    </section>
+</header><!--header结束 -->
+
+<!--修改banner开始-->
+  <div class="banner">
+    
+    <div class="flexslider">
+      <ul class="slides">
+	
+<li><a href="https://news.bnu.edu.cn/zx/ztxw/hgsswfjsww/index.htm" target="_blank"><img src="images/2026-05/e465fbcbad6646e79eae4e5087711429.jpg" />
+              <span class="bannerTitle"></span>
+            </a></li>
+	
+<li><a href="https://news.bnu.edu.cn/zx/ztxw/jkgjzgzxshkxzzzstxnlkczxshkxgzlfzxjm/index.htm" target="_blank"><img src="images/2026-05/dde67f77c21a4f73afa28059cdf7a91f.png" />
+              <span class="bannerTitle"></span>
+            </a></li>
+	
+<li><a href="https://news.bnu.edu.cn/zx/ztxw/slhjxzqzjgxxjy/index.htm" target="_blank"><img src="images/2026-03/accfd1fe09934921ab06c7f623688a50.png" />
+              <span class="bannerTitle"></span>
+            </a></li>
+	
+<li><a href="https://news.bnu.edu.cn/zx/xzdt/776b66f9059b4d14b922f308d1bf6fd1.htm" target="_blank"><img src="images/2026-05/2c766005252a44d48a71e95eb1493036.png" />
+              <span class="bannerTitle"></span>
+            </a></li>
+	
+<li><a href="https://mp.weixin.qq.com/s/h_oq98ARbuhjHqUaA1Xdng" target="_blank"><img src="images/2026-05/f77965a0d8cb41ffb1c798d8462c7466.jpg" />
+              <span class="bannerTitle"></span>
+            </a></li>
+	
+<li><a href="https://mp.weixin.qq.com/s/WBQLmetF8gD-YqAlYUuuKA" target="_blank"><img src="images/2026-05/07662d99a5e5463aafeda34da3e80172.jpg" />
+              <span class="bannerTitle"></span>
+            </a></li>
+      </ul>
+   </div>
+   <span class="review_newsBg"></span>
+   <div class="review_news"><a href="tt/index.htm">More ></a></div>
+  <span class="Banner_bg"></span>
+  <span class="Banner_line"></span>
+</div>
+    <!--修改banner结束-->
+<!--content开始-->
+<section class="content">
+  <span class="gz_bg"></span>
+  <section class="modeWrap01">
+      <div class="section wow fadeInUpSmall" data-wow-delay="0.6s">
+            <div class="listTitle01">
+                <a href="http://news.bnu.edu.cn/zx/ttgz/index.htm"><h3><img src="images/title01.png" alt=""></h3></a>
+            </div>
+            <ul class="list01">
+
+
+
+ 
+
+
+
+
+
+              <li class="liBg3"><a href="http://news.bnu.edu.cn//zx/ttgz/dd44d36c6d634e5f8e5ff1b369c1516d.htm" target="_blank">
+                  <span class="item-img01"><img src="http://news.bnu.edu.cn/images/2026-05/236af067865742298f69765991da1d38.png" alt=""></span>
+                  <div class="item-txt01">
+                      <h3>新时代中国特色哲学社会科学高质量发展论坛暨北京师范大学哲学社会科学研究十年成就报...</h3>
+                      <span class="more01"><img src="images/more3.png" alt=""></span>
+                  </div>
+              </a></li>
+			  <li class="liBg4"><a href="http://news.bnu.edu.cn//zx/ttgz/97b6308522d047b293d7eb41f4581e77.htm" target="_blank">
+                  <span class="item-img01"><img src="http://news.bnu.edu.cn/images/2026-05/5ed9ae1cb38d45eabf7871d4792ddcef.jpg" alt=""></span>
+                  <div class="item-txt01">
+                      <h3>追求卓越，矢志报国！北京师范大学师生党员同上一堂课</h3>
+                      <span class="more01"><img src="images/more3.png" alt=""></span>
+                  </div>
+              </a></li>
+              <li class="liBg3"><a href="http://news.bnu.edu.cn//zx/ttgz/a42501ac43544a0496d5844a4a5164e2.htm" target="_blank">
+                  <span class="item-img01"><img src="http://news.bnu.edu.cn/images/2026-05/05c8410a5a8540bc8be748dc5db01937.jpg" alt=""></span>
+                  <div class="item-txt01">
+                      <h3>于吉红出席2026世界数字教育大会</h3>
+                      <span class="more01"><img src="images/more3.png" alt=""></span>
+                  </div>
+              </a></li>
+			  <li class="liBg4"><a href="http://news.bnu.edu.cn//zx/ttgz/b410a3243ece4ca99e3b19c7cd2cb061.htm" target="_blank">
+                  <span class="item-img01"><img src="http://news.bnu.edu.cn/images/2026-05/03673b74156845a9b05adc505d9658e6.jpg" alt=""></span>
+                  <div class="item-txt01">
+                      <h3>北师大召开八届三次教代会、十六届三次工代会</h3>
+                      <span class="more01"><img src="images/more3.png" alt=""></span>
+                  </div>
+              </a></li>
+
+            </ul>
+      </div>
+  </section>
+  <section class="modeWrap02">
+      <div class="section wow fadeInUpSmall" data-wow-delay="0.3s">
+          <div class="listTitle01 listTitle02">
+                <a href="http://news.bnu.edu.cn/zx/zhxw/index.htm"><h3><img src="images/title02.png" alt=""></h3></a>
+          </div>
+          <ul class="list02 clear">
+		  
+
+			
+              <li><div>
+              <a class="item-info2" href="http://news.bnu.edu.cn//zx/zhxw/fd8647a6cc6a44dd91d163ed1c142f6e.htm" target="_blank">
+                  <span class="item-img02"><img src="http://news.bnu.edu.cn/images/2026-05/13dbe676fdcc4f59b0f8ed05b7f50260.png" alt=""></span>
+                  <div class="item-txt02">
+                      <h3>教育部专家组到北师大专项调研直属高校“两重”建设中期进展</h3>
+                      <p>5月27日，教育部专家组到北师大专项调研直属高校“两重”建设中期进展。</p>
+                  </div>
+              </a>
+               <span class="more02"><a href="http://news.bnu.edu.cn//zx/zhxw/fd8647a6cc6a44dd91d163ed1c142f6e.htm" target="_blank"><img src="images/more3.png" alt=""></a></span>
+              </div></li>
+
+			
+              <li><div>
+              <a class="item-info2" href="http://news.bnu.edu.cn//zx/zhxw/5bed336584c04a4eb737fa2c778983b2.htm" target="_blank">
+                  <span class="item-img02"><img src="http://news.bnu.edu.cn/images/2026-05/322bdd69f9374e5da10c8a4a4a85a0d2.jpg" alt=""></span>
+                  <div class="item-txt02">
+                      <h3>总务部开展校园防灾减灾系列活动</h3>
+                      <p>为全面贯彻落实习近平总书记关于防灾减灾工作的重要指示精神，加大校园防灾减灾科普宣传力度，提高师生防灾避险意识和能力，总务部精心部署，紧扣主题，全域联动，多措并举，于5月11日至17...</p>
+                  </div>
+              </a>
+               <span class="more02"><a href="http://news.bnu.edu.cn//zx/zhxw/5bed336584c04a4eb737fa2c778983b2.htm" target="_blank"><img src="images/more3.png" alt=""></a></span>
+              </div></li>
+
+			
+              <li><div>
+              <a class="item-info2" href="http://news.bnu.edu.cn//zx/zhxw/d154fc9233534d53b02c53a3751e35be.htm" target="_blank">
+                  <span class="item-img02"><img src="http://news.bnu.edu.cn/images/2026-05/e9dfc08eb46f48eb9b430bb485553904.jpg" alt=""></span>
+                  <div class="item-txt02">
+                      <h3>青海师大学生致信感谢北师大师范教育协同提质计划夏令营</h3>
+                      <p>近日，参加北京师范大学师范教育协同提质计划夏令营的青海师范大学全体营员向北师大发来感谢信，诚挚感谢学校强师工程办公室与党委学生工作部在师范教育协同提质计划中给予的大力支持与悉心指导...</p>
+                  </div>
+              </a>
+               <span class="more02"><a href="http://news.bnu.edu.cn//zx/zhxw/d154fc9233534d53b02c53a3751e35be.htm" target="_blank"><img src="images/more3.png" alt=""></a></span>
+              </div></li>
+
+			
+              <li><div>
+              <a class="item-info2" href="http://news.bnu.edu.cn//zx/zhxw/4d3d51902b01434bb61ce21c197aa1af.htm" target="_blank">
+                  <span class="item-img02"><img src="http://news.bnu.edu.cn/images/2026-05/a6b18f91ff964bc79462c351733f7de9.png" alt=""></span>
+                  <div class="item-txt02">
+                      <h3>“河南省‘十五五’中小学骨干校长培养工程第一期研修班”在北师大开班</h3>
+                      <p>5月25日，受河南省教育厅委托，由北京师范大学校长培训学院承办的“河南省‘十五五’中小学骨干校长培养工程第一期研修班”，在北京师范大学开班。</p>
+                  </div>
+              </a>
+               <span class="more02"><a href="http://news.bnu.edu.cn//zx/zhxw/4d3d51902b01434bb61ce21c197aa1af.htm" target="_blank"><img src="images/more3.png" alt=""></a></span>
+              </div></li>
+
+          </ul>
+      </div>
+  </section>
+  <section class="modeWrap03">
+      <div class="section wow fadeInUpSmall" data-wow-delay="0.3s">
+          <div class="listTitle01 listTitle03">
+                <a href="http://news.bnu.edu.cn/zx/xzdt/index.htm"><h3><img src="images/title03.png" alt=""></h3></a>
+          </div>
+          <ul class="list03 clear">
+              
+              
+			  
+          </ul>
+		  
+		  
+		  <ul class="list03 clear">
+              <li class="d-bg02"><a href="http://news.bnu.edu.cn//zx/xzdt/295e5f2e76704b0684cfceda7e9518e3.htm"  target="_blank">
+                  <div class="item-txt03">
+                      <h3>[观点]吴玉军：“历史记忆”的认同逻辑与时代书写</h3>
+                      <div class="item-con03">
+						  。一个民族、一个国家只有守护好自己的历史记忆，才能保持自身的特性；其成员只有形成对民族、国家的共同认知，即拥有共同的历史记忆，才能为民族和国家的延续发展筑牢坚实的文化心理基础。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+              <li><a href="http://news.bnu.edu.cn//zx/xzdt/70075fe7132f47fba9f8148c680d15e2.htm"  target="_blank">
+                  <div class="item-txt03">
+                      <h3>[研讨]北师大新闻传播学院与小红书联合发布《网络社会与青年婚恋观调查报告（2026）》</h3>
+                      <div class="item-con03">
+
+						  5月21日下午，《网络社会与青年婚恋观调查报告（2026）》发布仪式暨研讨会在京举行。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+              <li class="d-bg02"><a href="http://news.bnu.edu.cn//zx/xzdt/776b66f9059b4d14b922f308d1bf6fd1.htm"  target="_blank">
+                  <div class="item-txt03">
+                      <h3>[荣誉]北京师范大学代表队斩获ASC26一等奖和超级团队奖</h3>
+                      <div class="item-con03">
+						  5月20日，2026ASC世界大学生超级计算机竞赛（ASC26）总决赛在无锡学院落幕。北师大代表队荣获总决赛一等奖，并在跨校超级团队赛中斩获超级团队奖。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+              <li><a href="http://news.bnu.edu.cn//zx/xzdt/d55f46e3414e42f2959261c290a5d9a4.htm"  target="_blank">
+                  <div class="item-txt03">
+                      <h3>[预告]06.04京师一带一路学术沙龙（第二十四期）</h3>
+                      <div class="item-con03">
+
+						  时间：2026年6月4日 10:00-11:30<br>​地点：北师大珠海校区励教楼E106会议室<br>主讲人：赵红军 上海师范大学商学院副院长、教授
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+			  
+              <li><a href="http://news.bnu.edu.cn//zx/xzdt/e955e929b5f34dc8afe220c747ce0a44.htm" target="_blank">
+                  <div class="item-txt03">
+                      <h3>[研讨]北京师范大学举办“俄罗斯学视域下的中俄国家软实力：理论与实践”国际研讨会</h3>
+                      <div class="item-con03">
+						  5月23日，由教育部国别和区域研究基地北京师范大学俄罗斯研究中心与莫斯科国立国际关系学院联合举办的“俄罗斯学视域下的中俄国家软实力：理论与实践”国际研讨会在北京师范大学召开。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+              <li class="d-bg02"><a href="http://news.bnu.edu.cn//zx/xzdt/a1d0b50819d945cfa79747e7fedf032a.htm" target="_blank">
+                  <div class="item-txt03">
+                      <h3>[会议]Springer Nature人文社科交流合作座谈会举办</h3>
+                      <div class="item-con03">
+						  5月21日下午，​为助力学校人文社科成果的国际传播与影响力提升，图书馆邀请学术出版机构Springer Nature相关负责人在季端厅举办人文社科交流合作座谈会。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+              <li><a href="http://news.bnu.edu.cn//zx/xzdt/74e46776f9da4c97aa401cc8fab9e5cf.htm" target="_blank">
+                  <div class="item-txt03">
+                      <h3>[观点]林崇德：以身心健康促进学生终身发展与高质量人才培养</h3>
+                      <div class="item-con03">
+						  在今年两会记者会上，教育部部长怀进鹏提到，“‘健康第一’既是理念又是责任，更要落到行动上。我们将持续努力、一抓到底，让五育并举、全面发展落地见效”。如何帮助学生保持良好的身心状态，培养健全人格与积极心态，成为新时代高校人才培养的重要课题。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+              <li class="d-bg02"><a href="http://news.bnu.edu.cn//zx/xzdt/5a699fcfd1bb43b1b924313e6d961e0e.htm" target="_blank">
+                  <div class="item-txt03">
+                      <h3>[讲座]“读书、写作与表演——我们的艺术人生”树人大讲堂讲座举办</h3>
+                      <div class="item-con03">
+						  5月22日下午，“读书、写作与表演——我们的艺术人生”树人大讲堂讲座在敬文讲堂举办。
+                      </div>
+                      <!-- <span class="more03"><img src="images/more3.png" alt=""></span> -->
+                  </div>
+              </a></li>
+          </ul>
+		  
+		  
+		  
+		  
+		  
+      </div>
+  </section>
+  <section class="modeWrap04">
+      <div class="section wow fadeInUpSmall" data-wow-delay="0.3s"> 
+          <div class="listTitle01 listTitle04">
+                <a href="http://news.bnu.edu.cn/"><h3><img src="images/title04.png" alt=""></h3></a>
+          </div>
+          <div class="list04 clear">
+		  
+              <div class="item-info04 item-2">
+                <div>
+                  <span class="item-img04"><a href="https://news.bnu.edu.cn/zx/ztxw/xbldsyzdbsd/index.htm" target="_blank"><img src="http://news.bnu.edu.cn/images/2025-11/77593669a00548c2831eb4f7999c53a0.jpg" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="https://news.bnu.edu.cn/zx/ztxw/xbldsyzdbsd/index.htm" target="_blank">西北联大岁月中的北师大</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-info04 item-3">
+                <div>
+                  <span class="item-img04"><a href="https://mp.weixin.qq.com/s/Bw2MGxDpKWl2ik56CF01Fg" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-05/c03adefc1a6d4a6996143bbf9008c2a3.jpg" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="https://mp.weixin.qq.com/s/Bw2MGxDpKWl2ik56CF01Fg" target="_blank">师大月历｜山海归来，...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-info04 item-1 item-marginR">
+                <div>
+                  <span class="item-img04"><a href="http://news.bnu.edu.cn//zx/mdwy/67cbc661397f4aee8051ee44f92b88f9.htm" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-05/c048df6e07a944749cb2830385a24cbd.jpg" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="http://news.bnu.edu.cn//zx/mdwy/67cbc661397f4aee8051ee44f92b88f9.htm" target="_blank">师者之光照见青春选择——一场关于经典...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-info04 item-1 item-marginR">
+                <div>
+                  <span class="item-img04"><a href="http://news.bnu.edu.cn//zx/bsrw/56680fcf3ce34171827a58d5bdddfa12.htm" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-05/abce2950cf8447fe83137725ba663a45.png" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="http://news.bnu.edu.cn//zx/bsrw/56680fcf3ce34171827a58d5bdddfa12.htm" target="_blank">晁福林：既要“踏遍青山”，又要“笨鸟...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-info04 item-1">
+                <div>
+                  <span class="item-img04"><a href="http://news.bnu.edu.cn//zx/bsrw/73e6bf18507c486c8629d81634676e23.htm" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-05/3c0df9e8880d464285dee8b43073c065.jpg" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="http://news.bnu.edu.cn//zx/bsrw/73e6bf18507c486c8629d81634676e23.htm" target="_blank">郑日昌：他推动题型革新，让高考有了选...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-info04 item-1">
+                <div>
+                  <span class="item-img04"><a href="http://news.bnu.edu.cn//zx/bsrw/650a77e69a944fd18beef4789b981225.htm" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-05/803560399b5f4db1878c80da350bfc3b.jpg" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="http://news.bnu.edu.cn//zx/bsrw/650a77e69a944fd18beef4789b981225.htm" target="_blank">童庆炳：“上课是人生的节日”</a>
+                  </div>
+                </div>
+              </div>
+              <div class="item-info04 item-1">
+                <div>
+                  <span class="item-img04"><a href="http://news.bnu.edu.cn//zx/bsrw/d97eb3ebcf5c49a3969d3ad1b96cc2a4.htm" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-05/8d03ac786bbe42cb96f6710c2a2f10a3.png" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="http://news.bnu.edu.cn//zx/bsrw/d97eb3ebcf5c49a3969d3ad1b96cc2a4.htm" target="_blank">坚守教育初心 播撒育人火种——访心理...</a>
+                  </div>
+                </div>
+              </div>
+			  <div class="item-info04 item-1 phoneItem-inf004">
+                <div>
+                  <span class="item-img04"><a href="bsgs/index.htm">+查看更多+</a></span>
+                </div>
+              </div>
+              <div class="item-info04 item-4">
+                <div>
+                  <span class="item-img04"><a href="https://mp.weixin.qq.com/s/v_gCZRcDj2o3fhkO-7FH8w" target="_blank"><img src="http://news.bnu.edu.cn/images/2026-03/35937f768398426d8a8175221b7f244b.jpg" alt=""></a></span>
+                  <span class="item-txtBg04"></span>
+                  <div class="item-txt04">
+                      <a href="https://mp.weixin.qq.com/s/v_gCZRcDj2o3fhkO-7FH8w" target="_blank">当春天来到北师大</a>
+                  </div>
+                </div>
+              </div>
+			  
+          </div>
+      </div>
+  </section>
+  <section class="modeWrap05">
+      <div class="section clear">
+          <div class="col lf wow fadeInLeftSmall" data-wow-delay="0.4s">
+              <div class="listTitle01 listTitle05">
+                <a href="tzgg/index.htm"><h3><img src="images/title05.png" alt=""></h3></a>
+              </div>
+              <div class="flexslider carousel notice-list">
+                <ul class="slides">
+                </ul>
+            </div>
+          </div>
+          <div class="rt wow fadeInRightSmall" data-wow-delay="0.4s">
+             <div class="listTitle01 listTitle05">
+                <a href="https://news.bnu.edu.cn//pt/mtsd/index.htm"><h3><img src="images/title06.png?260409" alt=""></h3></a>
+              </div>
+              <div class="flexslider carousel notice-list">
+                <ul class="slides">
+                  <li>
+                      <span class="notice-date">
+                          <strong>29</strong><i>
+            			  May
+						  </i>
+                      </span>
+                      <div class="notice-txt">
+                           <a href="http://news.bnu.edu.cn//pt/mtsd/58f1892fc5804b9e867c2ff523c909ff.htm" target="_blank">【光明日报】第十八届北京市哲学社会科学优秀成果奖特等奖：《厚粲集（四卷本）》</a>
+                      </div>
+                  </li>
+                  <li>
+                      <span class="notice-date">
+                          <strong>27</strong><i>
+            			  May
+						  </i>
+                      </span>
+                      <div class="notice-txt">
+                           <a href="http://news.bnu.edu.cn//pt/mtsd/2e0461b465a64eb796a435e308f21f66.htm" target="_blank">【人民日报】“鸟类宜居家园”是怎样建成的？</a>
+                      </div>
+                  </li>
+                  <li>
+                      <span class="notice-date">
+                          <strong>25</strong><i>
+            			  May
+						  </i>
+                      </span>
+                      <div class="notice-txt">
+                           <a href="http://news.bnu.edu.cn//pt/mtsd/d82d0223d9154b13aec5f652fa5e27bb.htm" target="_blank">【人民日报】让文化人才创造力充分涌流</a>
+                      </div>
+                  </li>
+                  <li>
+                      <span class="notice-date">
+                          <strong>22</strong><i>
+            			  May
+						  </i>
+                      </span>
+                      <div class="notice-txt">
+                           <a href="http://news.bnu.edu.cn//pt/mtsd/d4bd4fc0e8a34deb8c8a43baf7784eeb.htm" target="_blank">【光明网】“师承万象”：AI大模型为中小学教师赋能</a>
+                      </div>
+                  </li>
+                  <li>
+                      <span class="notice-date">
+                          <strong>22</strong><i>
+            			  May
+						  </i>
+                      </span>
+                      <div class="notice-txt">
+                           <a href="http://news.bnu.edu.cn//pt/mtsd/ae2121822614464e935d11b70241d514.htm" target="_blank">【光明日报】AI时代，教育应培养学生哪些能力</a>
+                      </div>
+                  </li>
+                  <li>
+                      <span class="notice-date">
+                          <strong>22</strong><i>
+            			  May
+						  </i>
+                      </span>
+                      <div class="notice-txt">
+                           <a href="http://news.bnu.edu.cn//pt/mtsd/2b9c1332486f4a8bbc0d6470d212d653.htm" target="_blank">【光明日报】从战略对接到民心相通：“中俄教育年”开启人文合作新篇章</a>
+                      </div>
+                  </li>
+                </ul>
+            </div>
+          </div>
+      </div>
+  </section>
+  <section class="modewrap06 clear">
+      <div class="section clear">
+          
+           <div class="col md wow fadeInUpSmall" data-wow-delay="0.4s">
+              <div class="sina_inner">
+                  <a class="p01" href="https://weibo.com/lovebnu" target="_blank">
+				  <strong>@ 北京师范大学  </strong></a><br>
+   				  <p>晨光与暮色交替，木铎与书声相和。</p> 
+<p>时光流转间，北师大故事在镜头里沉淀，每一帧都藏着“我”与北师大的温度。</p>
+				  
+              </div>
+          </div>
+<div class="col rt wow fadeInRightSmall" data-wow-delay="0.4s">
+              <div class="sina_inner">
+                  <a class="p01" href="https://mp.weixin.qq.com/s/crEfO1zmiJKqu-d0XnY6wA" target="_blank">
+				  <strong>@ 北京师范大学  </strong></a><br>
+   				  <p>春天一来，万物晴朗</p> 
+<p>愿这份给BNUer的「晴天指南」</p> 
+<p>带你拥抱春日的校园美景</p> 
+<p><br></p>
+				  
+              </div>
+          </div>
+
+          <div class="col lf wow fadeInLeftSmall" data-wow-delay="0.4s">
+              <span class="sina"><a href="#"> </a></span>
+              <span class="ma01"><a href="#"><img src="images/ma01.png" alt=""></a></span>
+              <span class="weixin"><a href="#"> </a></span>
+              <span class="m02"><a href="#"><img src="images/ma02.png" alt=""></a></span>
+          </div>
+      </div>
+  </section>
+</section>
+
+<!--content结束-->
+<!--footer开始-->
+<a href="#" class="goTop">TOP</a>
+
+<footer class="footer">
+	<span>&copy; 版权所有 北京师范大学 </span> <strong>|</strong>
+    <span>地址：北京市新街口外大街19号 &nbsp;&nbsp; 邮编：100875 </span><strong>|</strong>
+    <span><a href="https://beian.miit.gov.cn" style=" color: white;">京ICP备10031106号-58 </a>  京公网安备11040102700202号</span><strong>|</strong>
+    <span class="tel">电话查号台：010-58806183  </span>
+</footer><!--<script src="js/modernizr.js?v=1780161406003"></script>    -->      
+<!--footer结束-->
+<!-- 通用JS -->
+<script type="text/javascript" src="js/jquery-1.9.0.min.js?v=1780161406003"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js?v=1780161406003"></script>
+<script type="text/javascript" src="js/script.js?v=1780161406003"></script>
+<!-- FlexSlider -->
+<script type="text/javascript">
+$(function() {
+    Nav('#nav')//导航
+    SerMax()//搜索
+    ImgHeight()//banner图片高度
+    mobideMenu()// 移动端主导航
+	 $(".banner .flexslider").flexslider({
+		animation:'fade',
+		slideshowSpeed: 6000, //展示时间间隔ms
+		animationSpeed: 1000, //滚动时间ms
+		touch: true //是否支持触屏滑动
+	});
+	 indexLi()//学术动态1225px内小尺寸动态加类名
+	 slides()
+	 var currentWidth = 1240;
+		$(window).resize(function() {
+			slides()
+		});
+	 function slides(){
+	 	var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 768) {
+			//$('.mode02 .flexslider').width(winWidth);
+			//conWidth = 300;
+			x = 20;
+		} else if(winWidth < 992) {
+			//$('.mode02 .flexslider').width(winWidth)-60;
+			//conWidth = 660;
+			x = 50;
+		 }else {
+		 	//$('.mode02 .flexslider').width(winWidth);
+			//conWidth = 1400;
+			x = 100;
+		}
+		
+			$(".notice-list.flexslider").flexslider({
+			  animation: "slide",
+		    animationLoop: true,
+		  
+		    itemMargin: x,
+		    minItems: 1,
+		    maxItems: 2,
+        touch: true //是否支持触屏滑动
+		   // pausePlay: true
+			});
+	 	
+	 }
+
+}); 
+
+</script>
+
+<script src="js/wow.min.js?v=1780161406003"></script>
+<script type="text/javascript"> 
+if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.match(/8./i)=="8.") 
+{ 
+  // console.log(1);
+} 
+else{
+  new WOW().init();
+}
+</script>
+<!--I4CsdJ15tUOlkA5ldEYE3HbkfADOzWfd4WJp38xcRiKZV9lkdYKDDl6Yj5p6HzwRwV2NvZnOFoS31oCO39R7PMDEUw+yPZxYjH56KT8ERQZmnlg1pF+bvdG8AH3pUEdr8TNhLY/+yFqSxmIKL41dNoYQ2STGsj6lx2h7IeX4Ujg=--><script type='text/javascript' src='g_style/g_index.js?v=1780161406003'></script><script type='text/javascript' src='g_style/2466_g_channel_index.js?v=1780161406003'></script><script src='/cms/web/writeLog.jsp?siteID=57' async='async'></script><style>.selectTdClass{background-color:#edf5fa !important}.gpTable{ border-collapse:collapse;border:1px solid #000 }.gpTable td,.gpTable th{border:1px solid #000;  padding: 2px 3px;}.gpTable caption{border:1px dashed #DDD;border-bottom:0;padding:3px;text-align:center;}.gpTable th{border-top:1px solid #BBB;background-color:#F7F7F7;}.gpTable tr.firstRow th{border-top-width:2px;}.ue-table-interlace-color-single{ background-color: #fcfcfc; } .ue-table-interlace-color-double{ background-color: #f7faff; }td p{margin:0;padding:0;} th p{margin:0;padding:0;}blockquote {padding: 0 0 0 15px;margin: 0 0 18px;border-left: 5px solid #EEE;}</style>
+</body></html>

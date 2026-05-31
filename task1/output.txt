@@ -1,0 +1,36 @@
+╔══════════════════════════════════════════════════════════════╗
+║           Crawler Benchmark — async vs process vs thread     ║
+╚══════════════════════════════════════════════════════════════╝
+
+▶▶▶ Running async crawler
+async crawler: 33 schools (concurrency=4)
+✅ saved results/async/南京航空航天大学.txt
+✅ saved results/async/西北工业大学.txt
+✅ saved results/async/华南理工大学.txt
+✅ saved results/async/四川大学.txt
+✅ saved results/async/湖南大学.txt
+✅ saved results/async/同济大学.txt
+✅ saved results/async/中国农业大学.txt
+✅ saved results/async/中国科学技术大学.txt
+✅ saved results/async/西安交通大学.txt
+✅ saved results/async/北京航空航天大学.txt
+✅ saved results/async/北京师范大学.txt
+✅ saved results/async/兰州大学.txt
+✅ saved results/async/清华大学.txt
+✅ saved results/async/浙江大学.txt
+✅ saved results/async/中央民族大学.txt
+✅ saved results/async/天津大学.txt
+✅ saved results/async/东南大学.txt
+✅ saved results/async/南开大学.txt
+✅ saved results/async/武汉大学.txt
+✅ saved results/async/北京理工大学.txt
+✅ saved results/async/华中科技大学.txt
+✅ saved results/async/北京大学.txt
+✅ saved results/async/中国科学院大学.txt
+✅ saved results/async/上海财经大学.txt
+✅ saved results/async/电子科技大学.txt
+✅ saved results/async/华东师范大学.txt
+✅ saved results/async/中山大学.txt
+✅ saved results/async/中南大学.txt
+✅ saved results/async/中国人民大学.txt
+✅ saved results/async/复旦大学.txt

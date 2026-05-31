@@ -1,0 +1,1940 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>华中科技大学</title><META Name="keywords" Content="华中科技大学、华中科技、华科、华中大、华科大" />
+
+  <meta name="description" content="华中科技大学" />
+  
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="email=no" />
+  <meta name="format-detection" content="address=no" />
+  <meta name="format-detection" content="date=no" />
+  <link rel="stylesheet" type="text/css" href="css/f.css" />
+  <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/index20251203.css" />
+  <link rel="stylesheet" type="text/css" href="css/index0920.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/index102802.css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <!--[if lte IE 9]>
+<script type="text/javascript" src="js/jqie.js"></script>
+<![endif]-->
+  <script type="text/javascript" src="js/set.js"></script>
+  <script type="text/javascript" src="js/f.js"></script>
+  <style type="text/css">
+    .homea .pic {
+      position: relative;}
+
+    .homea .pic:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background: url(images/bamask.png) no-repeat bottom center;
+      background-size: 101% 101%;
+      height: 30%;}
+
+    .homea .pgba {
+      position: absolute;
+      right: .2rem;
+      bottom: 1.6rem;
+      z-index: 3;
+      left: auto;
+      width: auto;}
+
+    .homea .pgba span {
+      opacity: 1;
+      width: 12px;
+      height: 12px;}
+
+    .homea .pgba span.active {
+      opacity: 1;
+      background: #d20b17;}
+
+    .yingxiang {
+      color: #fff;}
+
+    .banner .pgba span {
+      width: 10px;
+      height: 10px;
+      overflow: hidden;}
+
+    .banner .pgba span.active {
+      background: #d20b17;}
+
+    .banner .pgba span.active i {
+      display: none;}
+
+    .banner .bannermore {
+      font-size: 12px;
+      color: #fff;
+      height: 14px;
+      line-height: 14px;
+      border-left: rgba(255, 255, 255, 0.65) solid 1px;
+      margin-left: 12px;
+      padding-left: 17px;
+      margin-top: 5px;}
+
+    .banner .bannermore:hover {
+      color: #dcc55a;}
+
+    .homeb .intit h4 div {
+      display: inline-block;
+      position: relative;
+      padding: 0.24rem 0.3rem 0 0;}
+
+    .homeb .aleft h4 em {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: left;}
+  </style>
+<!--Announced by Visual SiteBuilder 9-->
+<link rel="stylesheet" type="text/css" href="_sitegray/_sitegray_d.css" />
+<script language="javascript" src="_sitegray/_sitegray.js"></script>
+<!-- CustomerNO:7765626265723230747f4757535b574200000001475c -->
+<link rel="stylesheet" type="text/css" href="index.vsb.css" />
+<script type="text/javascript" src="/system/resource/js/vsbscreen.min.js" id="_vsbscreen" devices="pc|mobile|pad"></script>
+<script type="text/javascript" src="/system/resource/js/counter.js"></script>
+<script type="text/javascript">_jsq_(1001,'/index.jsp',-1,1866965740)</script>
+</head>
+
+<body>
+
+
+  <div class="loader"></div>
+  <div class="header ">
+    <div class="hd-a wp flex mobCopy">
+
+      <div class="btn-link ">
+        <div class="links">
+          <script language="javascript" src="/system/resource/js/dynclicks.js"></script><script language="javascript" src="/system/resource/js/openlink.js"></script>                    
+<a href="ksfw/xs.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59099)" target="_blank">学生</a>
+<a href="ksfw/jzg.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59100)" target="_blank">教职工</a>
+<a href="ksfw/xy.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59101)" target="_blank">校友</a>
+<a href="ksfw/fk.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59102)" target="_blank">访客</a>
+<a href="https://one.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59097)" target="_blank">信息门户</a>
+
+        </div>
+      </div>
+      <div class="topr flex">
+        <div class="lan">
+          
+<a href="http://english.hust.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59098)" target="_blank"><i class="iconfont icon-diqiu"></i>EN</a>
+
+
+        </div>
+        <div class="search ">
+          <script type="text/javascript">
+    function _nl_ys_check(){
+        
+        var keyword = document.getElementById('showkeycode1049819').value;
+        if(keyword==null||keyword==""){
+            alert("请输入你要检索的内容！");
+            return false;
+        }
+        if(window.toFF==1)
+        {
+            document.getElementById("lucenenewssearchkey1049819").value = Simplized(keyword );
+        }else
+        {
+            document.getElementById("lucenenewssearchkey1049819").value = keyword;            
+        }
+        var  base64 = new Base64();
+        document.getElementById("lucenenewssearchkey1049819").value = base64.encode(document.getElementById("lucenenewssearchkey1049819").value);
+        new VsbFormFunc().disableAutoEnable(document.getElementById("showkeycode1049819"));
+        return true;
+    } 
+</script>
+<form action="jsjg.jsp?wbtreeid=1001" method="post" id="au2a" name="au2a" onsubmit="return _nl_ys_check()" style="display: inline">
+ <input type="hidden" id="lucenenewssearchkey1049819" name="lucenenewssearchkey" value=""><input type="hidden" id="_lucenesearchtype1049819" name="_lucenesearchtype" value="1"><input type="hidden" id="searchScope1049819" name="searchScope" value="0"><input type="hidden" name="range" id="range" value="0"><input type="hidden" name="order" id="range" value="1">
+ 
+ <div class="serinp"><input type="text" class="inp" name="showkeycode" id="showkeycode1049819"></div>
+  <div class="serbtn"><i class="swiper-icons swi-sousuo"></i><input type="submit" class="sub" value=""></div>
+ 
+</form><script language="javascript" src="/system/resource/js/base64.js"></script><script language="javascript" src="/system/resource/js/formfunc.js"></script>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="hd-b wp pore">
+      <div class="logo flex-v-center">
+        
+<!-- 网站logo图片地址请在本组件"内容配置-网站logo"处填写 -->
+<a href="index.htm" title="华中科技大学主站2022"><img src="images/logo20240628.png"></a>
+      </div>
+      <ul class="flex hd-nav ">
+        
+
+
+
+
+
+     <li> <a href="index.htm">学校首页</a> </li>
+
+  
+
+
+
+     <li> <a href="xxgk.htm">学校概况</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="xxgk/xxjj.htm">学校简介</a>
+                             
+
+                                <a href="xxgk/lsyg.htm">历史沿革</a>
+                             
+
+                                <a href="xxgk/xxzc.htm">学校章程</a>
+                             
+
+                                <a href="xxgk/lrld.htm">历任领导</a>
+                             
+
+                                <a href="xxgk/xrld.htm">现任领导</a>
+                             
+
+                                <a href="xxgk/zzjg.htm">组织机构</a>
+                             
+
+                                <a href="http://vi.hust.edu.cn/">学校标识</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="yxsz.htm">院系设置</a>
+     
+  </li>
+  
+
+
+
+     <li> <a href="szdw.htm">师资队伍</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="szdw/lyys.htm">两院院士</a>
+                             
+
+                                <a href="http://employment.hust.edu.cn" target="_blank">广纳英才</a>
+                             
+
+                                <a href="szdw/rsgl.htm">人事管理</a>
+                             
+
+                                <a href="http://faculty.hust.edu.cn/" target="_blank">教师主页</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="xkjs.htm">学科建设</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="xkjs/zdxk.htm">重点学科</a>
+                             
+
+                                <a href="xkjs/bkzy.htm">本科专业</a>
+                             
+
+                                <a href="xkjs/ssxwsqyjxk.htm">硕士学位授权一级学科</a>
+                             
+
+                                <a href="xkjs/bsxwsqyjxk.htm">博士学位授权一级学科</a>
+                             
+
+                                <a href="http://postdoctor.hust.edu.cn/" target="_blank">博士后流动站</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="jyjx.htm">教育教学</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="jyjx/bksjy.htm">本科生教育</a>
+                             
+
+                                <a href="http://gs.hust.edu.cn/" target="_blank">研究生教育</a>
+                             
+
+                                <a href="http://sie.hust.edu.cn/" target="_blank">国际学生教育</a>
+                             
+
+                                <a href="jyjx/jxjy.htm">继续教育</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="kxyj.htm">科学研究</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="kxyj/kyjg.htm">科研机构</a>
+                             
+
+                                <a href="kxyj/kygl.htm">科研管理</a>
+                             
+
+                                <a href="kxyj/xqhz1/xqhz.htm">校企合作</a>
+                             
+
+                                <a href="http://kexie.hust.edu.cn/xsqk/hzkjdxxsqkylb.htm" target="_blank">学术期刊</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="zsjy.htm">招生就业</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="http://zsb.hust.edu.cn/" target="_blank">本科生招生</a>
+                             
+
+                                <a href="http://gszs.hust.edu.cn/" target="_blank">研究生招生</a>
+                             
+
+                                <a href="http://iso.hust.edu.cn/" target="_blank">国际学生招生</a>
+                             
+
+                                <a href="http://job.hust.edu.cn/" target="_blank">学生就业工作</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="hzjl.htm">合作交流</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="http://iat.hust.edu.cn/index.htm" target="_blank">科技合作</a>
+                             
+
+                                <a href="hzjl/gjjl.htm">国际交流</a>
+                             
+
+                                <a href="http://oia.hust.edu.cn/gjhy.htm">国际会议</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+
+
+     <li> <a href="zjhkd.htm">走进华科大</a>
+     
+                      <div class="sub-nav ">
+                           <div class="sub-nav-h ">
+                           
+
+                                <a href="zjhkd/xysh.htm">校园生活</a>
+                             
+
+                                <a href="zjhkd/fwxx.htm">服务信息</a>
+                             
+
+                                <a href="zjhkd/xyfg/qb.htm">校园风光</a>
+                             
+
+                           </div>
+                         </div>
+                       
+  </li>
+  
+
+      </ul>
+
+    </div>
+    <a href="javascript:;" class="navbtn"><i class="swiper-icons swi-caidan"></i></a>
+  </div>
+
+  <!-- 移动端头部s -->
+  <div class="headerm flex">
+    <div class="logo flex-v-center ">
+          
+
+        <a href="https://www.hust.edu.cn/" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 70916)"><img src="images/logo20240628.png" alt=""></a>
+      
+
+
+    </div>
+    <a href="javascript:;" class="navbtnm"><i class="swiper-icons swi-caidan"></i></a>
+  </div>
+
+  <div class="big-nav">
+    <div class="scroll">
+      <ul class="flex ">
+         <li><h2> <a href="index.htm">学校首页</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="index/wsxf.htm">网上信访</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="xxgk.htm">学校概况</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="xxgk/xxjj.htm">学校简介</a></h3>
+
+                <h3> <a href="xxgk/lsyg.htm">历史沿革</a></h3>
+
+                <h3> <a href="xxgk/xxzc.htm">学校章程</a></h3>
+
+                <h3> <a href="xxgk/lrld.htm">历任领导</a></h3>
+
+                <h3> <a href="xxgk/xrld.htm">现任领导</a></h3>
+
+                <h3> <a href="xxgk/zzjg.htm">组织机构</a></h3>
+
+                <h3> <a href="http://vi.hust.edu.cn/">学校标识</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="yxsz.htm">院系设置</a></h2>
+ 
+            </li>
+ 
+
+ <li><h2> <a href="szdw.htm">师资队伍</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="szdw/lyys.htm">两院院士</a></h3>
+
+                <h3> <a href="http://employment.hust.edu.cn" target="_blank">广纳英才</a></h3>
+
+                <h3> <a href="szdw/rsgl.htm">人事管理</a></h3>
+
+                <h3> <a href="http://faculty.hust.edu.cn/" target="_blank">教师主页</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="xkjs.htm">学科建设</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="xkjs/zdxk.htm">重点学科</a></h3>
+
+                <h3> <a href="xkjs/bkzy.htm">本科专业</a></h3>
+
+                <h3> <a href="xkjs/ssxwsqyjxk.htm">硕士学位授权一级学科</a></h3>
+
+                <h3> <a href="xkjs/bsxwsqyjxk.htm">博士学位授权一级学科</a></h3>
+
+                <h3> <a href="http://postdoctor.hust.edu.cn/" target="_blank">博士后流动站</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="jyjx.htm">教育教学</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="jyjx/bksjy.htm">本科生教育</a></h3>
+
+                <h3> <a href="http://gs.hust.edu.cn/" target="_blank">研究生教育</a></h3>
+
+                <h3> <a href="http://sie.hust.edu.cn/" target="_blank">国际学生教育</a></h3>
+
+                <h3> <a href="jyjx/jxjy.htm">继续教育</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="kxyj.htm">科学研究</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="kxyj/kyjg.htm">科研机构</a></h3>
+
+                <h3> <a href="kxyj/kygl.htm">科研管理</a></h3>
+
+                <h3> <a href="kxyj/xqhz1/xqhz.htm">校企合作</a></h3>
+
+                <h3> <a href="http://kexie.hust.edu.cn/xsqk/hzkjdxxsqkylb.htm" target="_blank">学术期刊</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="zsjy.htm">招生就业</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="http://zsb.hust.edu.cn/" target="_blank">本科生招生</a></h3>
+
+                <h3> <a href="http://gszs.hust.edu.cn/" target="_blank">研究生招生</a></h3>
+
+                <h3> <a href="http://iso.hust.edu.cn/" target="_blank">国际学生招生</a></h3>
+
+                <h3> <a href="http://job.hust.edu.cn/" target="_blank">学生就业工作</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="hzjl.htm">合作交流</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="http://iat.hust.edu.cn/index.htm" target="_blank">科技合作</a></h3>
+
+                <h3> <a href="hzjl/gjjl.htm">国际交流</a></h3>
+
+                <h3> <a href="http://oia.hust.edu.cn/gjhy.htm">国际会议</a></h3>
+                </div>
+                
+            </li>
+ 
+
+ <li><h2> <a href="zjhkd.htm">走进华科大</a></h2>
+ 
+               <div class="list">
+
+                <h3> <a href="zjhkd/xysh.htm">校园生活</a></h3>
+
+                <h3> <a href="zjhkd/fwxx.htm">服务信息</a></h3>
+
+                <h3> <a href="zjhkd/xyfg/qb.htm">校园风光</a></h3>
+                </div>
+                
+            </li>
+ 
+
+
+      </ul>
+    </div>
+    <div class="btn-list1 flex-center">
+      <div class="btn-link flex-center">
+        <div class="links flex">
+                              
+<a href="ksfw/xs.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59099)">学生</a>
+<a href="ksfw/jzg.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59100)">教职工</a>
+<a href="ksfw/xy.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59101)">校友</a>
+<a href="ksfw/fk.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59102)">访客</a>
+<a href="https://one.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59097)">信息门户</a>
+<a href="http://english.hust.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59136)">EN</a>
+
+        </div>
+      </div>
+      <div class="search ">
+        <script type="text/javascript">
+    function _nl_ys_check1(){
+        
+        var keyword = document.getElementById('showkeycode1049904').value;
+        if(keyword==null||keyword==""){
+            alert("请输入你要检索的内容！");
+            return false;
+        }
+        if(window.toFF==1)
+        {
+            document.getElementById("lucenenewssearchkey1049904").value = Simplized(keyword );
+        }else
+        {
+            document.getElementById("lucenenewssearchkey1049904").value = keyword;            
+        }
+        var  base64 = new Base64();
+        document.getElementById("lucenenewssearchkey1049904").value = base64.encode(document.getElementById("lucenenewssearchkey1049904").value);
+        new VsbFormFunc().disableAutoEnable(document.getElementById("showkeycode1049904"));
+        return true;
+    } 
+</script>
+<form action="jsjg.jsp?wbtreeid=1001" method="post" id="au8a" name="au8a" onsubmit="return _nl_ys_check1()" style="display: inline">
+ <input type="hidden" id="lucenenewssearchkey1049904" name="lucenenewssearchkey" value=""><input type="hidden" id="_lucenesearchtype1049904" name="_lucenesearchtype" value="1"><input type="hidden" id="searchScope1049904" name="searchScope" value="0"><input type="hidden" name="range" id="range" value="1"><input type="hidden" name="order" id="range" value="0">
+
+ 
+  <div class="serinp"><input type="text" class="inp" placeholder="输入关键词搜索..." name="showkeycode" id="showkeycode1049904"></div>
+ <div class="serbtn"><i class="swiper-icons swi-sousuo"></i><input type="submit" class="sub" value=""></div>
+</form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 移动端头部e -->
+
+
+
+  <div class="banner">
+
+    <div class="swiper-container slide-banner main-visual-slider main-visual-wrapper">
+      <div class="swiper-wrapper">            <div class="swiper-slide ">
+            <a href="" class="a" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71539)">
+                <div class="bg bgimg" style=" background: url(images/2026junshan.jpg)"></div>
+            </a>
+        </div>
+        <div class="swiper-slide ">
+            <a href="" class="a" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71536)">
+                <div class="bg bgimg" style=" background: url(images/2026huagongbei.png)"></div>
+            </a>
+        </div>
+        <div class="swiper-slide ">
+            <a href="" class="a" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71532)">
+                <div class="bg bgimg" style=" background: url(images/2026zhengjiguan.jpg)"></div>
+            </a>
+        </div>
+        <div class="swiper-slide ">
+            <a href="http://vr.hust.edu.cn/720v2/player/82" class="a" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71494)">
+                <div class="bg bgimg" style=" background: url(images/yunshanghuakedadatu.png)"></div>
+            </a>
+        </div>
+</div>
+
+      <div style="display:flex;z-index: 5;position: absolute; bottom: .3rem; left: 0;width: 100%;justify-content: center;">
+        <div class="pgba" style="width:auto;position: static;"></div>
+        <a class="bannermore" href="index/sjhkd/a2026.htm">更多 &gt;</a>
+      </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  <style type="text/css">
+    .homea .pic {
+      position: relative;}
+
+    .homea .pic:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background: url(images/bamask.png) no-repeat bottom center;
+      background-size: 101% 101%;
+      height: 30%;}
+
+    .homea .pgba {
+      position: absolute;
+      right: .2rem;
+      bottom: 1.6rem;
+      z-index: 3;
+      left: auto;
+      width: auto;}
+
+    .homea .pgba span {
+      opacity: 1;
+      width: 12px;
+      height: 12px;}
+
+    .homea .pgba span.active {
+      opacity: 1;
+      background: #d20b17;}
+
+    .ar_wap {
+      display: none;}
+
+    @media(max-width: 1199px) {
+      .main-visual-wrapper.ar_web {
+        display: none;}
+
+      .main-visual-wrapper.ar_wap {
+        display: block;}
+    }
+  </style>
+  <div class="homea overhide">
+    <div class="wp">
+      <div class="intit uani fadeInUp">
+        <h4><span>学校要闻</span><em class="bel">News</em></h4> <a href="http://news.hust.edu.cn/index.htm" target="_blank"><span>进入新闻网<i class="swiper-icons swi-arrbar"></i></span></a>
+      </div>
+
+      <div class="flex">
+        <div class="aleft">
+          <script language="javascript" src="/system/resource/js/centerCutImg.js"></script><script language="javascript" src="/system/resource/js/ajax.js"></script><div class="swiper-container slide-news uani fadeInUp" data-wow-delay=".1s">
+                <div class="swiper-wrapper">
+                  
+<div class="swiper-slide ">
+                       <a href="http://news.hust.edu.cn/info/1002/58653.htm" class="bg-mask alin_r"><div class="pic"><span class="a" style="background-image: url(/__local/7/59/A2/71965F91BC389360A121E3A449B_D979EDF5_DDF35.jpg);"><img src="/__local/7/59/A2/71965F91BC389360A121E3A449B_D979EDF5_DDF35.jpg" alt="" class="none"></span></div>
+                            <div class="txt"><h4 class="l2"><span class="aline_r">华中科技大学企业家夏季峰会（大湾区）暨首届青年企业家交流会举办</span></h4><p class="eclip"></p>
+                            <time class="din">2026.05.25</time>
+                            </div></a>
+                  </div>
+                  
+<div class="swiper-slide ">
+                       <a href="http://news.hust.edu.cn/info/1002/58612.htm" class="bg-mask alin_r"><div class="pic"><span class="a" style="background-image: url(/__local/4/28/5A/A890F76C76713A0EE6F9B4F01DF_215FFF92_A30D53.png);"><img src="/__local/4/28/5A/A890F76C76713A0EE6F9B4F01DF_215FFF92_A30D53.png" alt="" class="none"></span></div>
+                            <div class="txt"><h4 class="l2"><span class="aline_r">“我心中的华科大精神”主题征文通知</span></h4><p class="eclip"></p>
+                            <time class="din">2026.05.25</time>
+                            </div></a>
+                  </div>
+                  
+<div class="swiper-slide ">
+                       <a href="http://news.hust.edu.cn/info/1002/58633.htm" class="bg-mask alin_r"><div class="pic"><span class="a" style="background-image: url(/__local/F/10/A0/6527A90E031E3B1FC408AB3C563_326A7C21_C6A46.jpg);"><img src="/__local/F/10/A0/6527A90E031E3B1FC408AB3C563_326A7C21_C6A46.jpg" alt="" class="none"></span></div>
+                            <div class="txt"><h4 class="l2"><span class="aline_r">【科学前沿】生命学院朱斌团队成果登上《科学》</span></h4><p class="eclip"></p>
+                            <time class="din">2026.05.22</time>
+                            </div></a>
+                  </div>
+                  
+<div class="swiper-slide ">
+                       <a href="http://news.hust.edu.cn/info/1002/58586.htm" class="bg-mask alin_r"><div class="pic"><span class="a" style="background-image: url(/__local/E/4B/88/76F77F722EA31656C1DFD942CF4_ABAB3A87_2EF73.jpg);"><img src="/__local/E/4B/88/76F77F722EA31656C1DFD942CF4_ABAB3A87_2EF73.jpg" alt="" class="none"></span></div>
+                            <div class="txt"><h4 class="l2"><span class="aline_r">【科学前沿】武汉光电国家研究中心陈炜刘宗豪团队成果登上《科学》</span></h4><p class="eclip"></p>
+                            <time class="din">2026.05.15</time>
+                            </div></a>
+                  </div>
+                  
+</div>
+                <div class="pgba"></div>
+                <div class="sbtn"><a href="javascript:;" class="prev swiper-icons swi-arrbal"></a><a href="javascript:;" class="next swiper-icons swi-arrbar"></a></div>
+              </div><script>_showDynClickBatch(['dynclicks_u10_18518','dynclicks_u10_18517','dynclicks_u10_18504','dynclicks_u10_18459'],[18518,18517,18504,18459],"wbnews", 1866965740)</script>
+
+        </div>
+        <div class="aright">
+                    <ul class="uani fadeInUp" data-wow-delay=".2s">
+
+
+
+
+          <li>  <a href="https://www.news.cn/politics/leaders/20260517/edc2682b04de4d4292ffca24ec6c2569/c.html" class="bg-mask alin_r"><div class="pic"><span class="a" style="background-image: url(/__local/1/C8/A3/A9726AB93246EF8C0539171B324_2EBE6805_2D87A.jpg);"><img src="/__local/1/C8/A3/A9726AB93246EF8C0539171B324_2EBE6805_2D87A.jpg" alt="" class="none"></span></div>
+             <div class="txt"><h4 class="l2"><span class="aline_r">【学习进行时】习近平就推动哲学社会科学高质量发展作出重要指示</span></h4><time class="din">2026.05.17</time></div></a>
+       </li>
+                            
+      
+
+
+
+
+ <li>  <a href="https://news.hust.edu.cn/info/1002/58720.htm" class="alin_r">
+                 <div class="txt"><h4 class="12"><span class="aline_r">中华优秀传统文化核心课程教材体系建设负责人专题工作会召开</span></h4><time class="din">2026.05.30</time></div></a></li>
+                 
+      
+
+
+
+
+ <li>  <a href="http://news.hust.edu.cn/info/1002/58710.htm" class="alin_r">
+                 <div class="txt"><h4 class="12"><span class="aline_r">【哲学社会科学高质量发展】华中科技大学文科十年发展回顾</span></h4><time class="din">2026.05.29</time></div></a></li>
+                 
+      
+
+
+
+
+ <li>  <a href="https://news.hust.edu.cn/info/1002/58716.htm" class="alin_r">
+                 <div class="txt"><h4 class="12"><span class="aline_r">2026年湖北省高校实验室安全技能大赛在校举办</span></h4><time class="din">2026.05.29</time></div></a></li>
+                 
+      
+
+
+
+
+ <li>  <a href="http://news.hust.edu.cn/info/1002/58700.htm" class="alin_r">
+                 <div class="txt"><h4 class="12"><span class="aline_r">【谋划“十五五”】一张蓝图绘到底 开启高质量基建发展新征程</span></h4><time class="din">2026.05.29</time></div></a></li>
+                 
+      
+
+
+
+
+ <li>  <a href="http://news.hust.edu.cn/info/1002/58707.htm" class="alin_r">
+                 <div class="txt"><h4 class="12"><span class="aline_r">【聚焦学习教育】学校党委督导组督导调研协和医院党建工作</span></h4><time class="din">2026.05.28</time></div></a></li>
+                 
+      
+
+       </ul><script>_showDynClickBatch(['dynclicks_u11_18463','dynclicks_u11_18566','dynclicks_u11_18555','dynclicks_u11_18565','dynclicks_u11_18554','dynclicks_u11_18552'],[18463,18566,18555,18565,18554,18552],"wbnews", 1866965740)</script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script language="javascript">
+
+    function tabs(n) {
+
+      var len = 2;
+
+      for (var i = 1; i <= len; i++) {
+
+        document.getElementById('tab_a' + i).style.display = (i == n) ? 'block' : 'none';
+        document.getElementById('tab_as' + i).style.display = (i == n) ? 'opacity: 1;' : 'opacity: 0;';
+        document.getElementById('tab_' + i).className = (i == n) ? 'xuexi' : 'nones';
+
+      }
+    }
+
+  </script>
+  <style>
+    .xuexi span {
+      color: #d20b17;}
+
+    .xuexi em {
+      color: #d20b17;}
+  </style>
+  <div class="homeb overhide">
+    <div class="wp flex">
+      <div class="aleft">
+
+        <div class="intit uani fadeInUp">
+          <h4>
+            <div id="tab_1" class="xuexi" onmouseover="tabs('1');">
+              <span>校园看点</span><em class="bel">Campus attractions</em>
+            </div>
+            <div id="tab_2" onmouseover="tabs('2');">
+              <span>院系动态</span><em class="bel">Department News</em>
+            </div>
+          </h4>
+<div style="display: none;">
+  <a href="zhxw.htm" class="inmor arb tab_b" id="tab_as1" style="opacity: 1;"><span>查看更多</span></a>
+  <a href="yxdt.htm" class="inmor arb tab_b" id="tab_as2" style="opacity: 0;"><span>查看更多</span></a>
+</div>
+         
+        </div>
+
+        <div class="tab_b" id="tab_a1" style="display:block;">
+
+          
+    <div class="item ">
+      <a href="https://news.hust.edu.cn/info/1003/58721.htm" class="bg-mask ">
+        <div class="pic"><span class="a" style="background-image: url(/__local/2/30/73/BF9C61B951C550D8400F1076060_A6EA783A_B55760.png);"><img src="/__local/2/30/73/BF9C61B951C550D8400F1076060_A6EA783A_B55760.png" alt="" class="none"></span></div>
+
+
+        <div class="txt flex-v-center">
+          <h4 class="l2"><span class="aline_w">华中科技大学附属小学第二十四届少年科学院大会启幕</span></h4>
+          <!--<p class="l3"></p>-->
+          <time class="din">2026-05-30</time>
+
+
+        </div>
+
+      </a>
+    </div>
+
+
+    <ul class="uani">
+
+        <li>
+          <h4 class="12  alin_w"><a href="https://news.hust.edu.cn/info/1003/58719.htm" class="12 alin_w"><span class="aline_w">2026中国高校智能机器人创意大赛VEX U专项赛落幕</span></a></h4><time class="din">2026-05-30</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1002/58711.htm" class="12 alin_w"><span class="aline_w">【青年先锋】聚合物有序结构材料研究团队：研聚材攻难关 以创新筑强国</span></a></h4><time class="din">2026-05-29</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1003/58713.htm" class="12 alin_w"><span class="aline_w">附属中学成为“科技高中教学教研协作体”项目校</span></a></h4><time class="din">2026-05-29</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1003/58714.htm" class="12 alin_w"><span class="aline_w">人工智能发展与国家安全论坛在校举行</span></a></h4><time class="din">2026-05-29</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1003/58699.htm" class="12 alin_w"><span class="aline_w">湖北省社科院来校开展专题调研</span></a></h4><time class="din">2026-05-28</time>
+        </li>
+
+
+</ul><script>_showDynClickBatch(['dynclicks_u12_18568','dynclicks_u12_18567','dynclicks_u12_18560','dynclicks_u12_18562','dynclicks_u12_18563','dynclicks_u12_18553'],[18568,18567,18560,18562,18563,18553],"wbnews", 1866965740)</script>
+
+
+
+
+        </div>
+        <div class="tab_b" id="tab_a2" style="display:none;">
+
+          <ul>
+  
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1004/58687.htm" class="12 alin_w"><span class="aline_w">华科杯足球联赛落幕</span></a></h4><time class="din">2026-05-27</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1004/58678.htm" class="12 alin_w"><span class="aline_w">中欧能源学院赴深圳访企拓岗</span></a></h4><time class="din">2026-05-25</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1004/58667.htm" class="12 alin_w"><span class="aline_w">医管院举办2026年师生趣味运动会</span></a></h4><time class="din">2026-05-25</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1004/58656.htm" class="12 alin_w"><span class="aline_w">公管学院师生共唱红歌颂党恩</span></a></h4><time class="din">2026-05-25</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1003/58643.htm" class="12 alin_w"><span class="aline_w">【聚焦学习教育】电气学院举行“树立和践行正确政绩观学习教育暨弘扬科学家精神”宣讲会</span></a></h4><time class="din">2026-05-22</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1004/58623.htm" class="12 alin_w"><span class="aline_w">【秩青春】集成电路学院74821班校友返校再叙同窗情</span></a></h4><time class="din">2026-05-21</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1004/58579.htm" class="12 alin_w"><span class="aline_w">口腔医学院第十五届“岁月光华 皓齿逐梦”毕业晚会落幕</span></a></h4><time class="din">2026-05-14</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1003/58565.htm" class="12 alin_w"><span class="aline_w">【秩青春】计算机学院首届校友毕业50周年归母校</span></a></h4><time class="din">2026-05-13</time>
+    </li>
+
+
+
+
+
+
+
+    <li>
+      <h4 class="12  alin_w"><a href="http://news.hust.edu.cn/info/1003/58543.htm" class="12 alin_w"><span class="aline_w">建规学院联合校医院开展医教协同低空急救实操培训</span></a></h4><time class="din">2026-05-12</time>
+    </li>
+
+
+
+</ul><script>_showDynClickBatch(['dynclicks_u13_18543','dynclicks_u13_18544','dynclicks_u13_18530','dynclicks_u13_18523','dynclicks_u13_18516','dynclicks_u13_18492','dynclicks_u13_18481','dynclicks_u13_18434','dynclicks_u13_18421'],[18543,18544,18530,18523,18516,18492,18481,18434,18421],"wbnews", 1866965740)</script>
+
+
+        </div>
+      </div>
+      <div class="aright">
+
+        <div class="intit uani fadeInUp">
+          <h4>
+            <div><span>媒体聚焦</span><em class="bel">Media focus</em> </div>
+          </h4>
+          <div style="display: none;">
+          <a href="mtjj.htm" class="inmor arb"><span>查看更多</span></a>
+          </div>
+        </div>
+
+
+        
+
+
+    <div class="item uani fadeInUp" data-wow-delay=".1s">
+      <a href="https://h.xinhuaxmt.com/vh512/share/13119389?docid=13119389&newstype=1001&d=13526ad&channel=weixin" class="bg-mask ">
+        <div class="pic"><span class="a" style="background-image: url(/__local/A/4A/53/5E4AB6FC824B1EE721DDF0987A2_BDB78F5F_F14BC.jpg);"><img src="/__local/A/4A/53/5E4AB6FC824B1EE721DDF0987A2_BDB78F5F_F14BC.jpg" alt="" class="none"></span></div>
+
+
+        <div class="txt flex-v-center">
+          <h4 class="l2"><span class="aline_w">【新华社】全球专家在武汉共绘肝胆胰疾病诊疗新蓝图</span></h4>
+          <!--<p class="l3"></p>-->
+          <time class="din">2026-05-25</time>
+
+
+        </div>
+
+      </a>
+    </div>
+
+
+    <ul class="uani fadeInUp" data-wow-delay=".2s">
+
+        <li>
+          <h4 class="12  alin_w"><a href="https://mp.weixin.qq.com/s/OyHy0fVazGUTwV2rOzeeTg" class="12 alin_w"><span class="aline_w">【青春湖北】2026年度中国青年五四奖章暨新时代青年先锋奖主题宣讲活动在华科大举办</span></a></h4><time class="din">2026-05-29</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="https://www.peopleapp.com/column/30052249990-500007516088" class="12 alin_w"><span class="aline_w">【人民日报】“数智赋堆”新路径在汉研讨 近500名专家学者共话核能创新</span></a></h4><time class="din">2026-05-28</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="https://news.hubeidaily.net/hbrbsharenew/index_share/5/5548129/5000638/0/0?tencentShare=1" class="12 alin_w"><span class="aline_w">【湖北日报】基础研究“源头”和“总机关”之喻，是在强调一种超前布局的治理理性</span></a></h4><time class="din">2026-05-26</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="https://www.takungpao.com/a/202605/25/AP6a135e41e4b04773b06eb526.html" class="12 alin_w"><span class="aline_w">【大公报】华科大校友跨越海峡医学圆梦</span></a></h4><time class="din">2026-05-25</time>
+        </li>
+
+        <li>
+          <h4 class="12  alin_w"><a href="https://hb.chinadaily.com.cn/a/202605/25/WS6a13b8bea310942cc49ae037.html" class="12 alin_w"><span class="aline_w">【中国日报】华科大主办世卫大会“人工智能赋能长期照护体系建设”边会并分享“中国方案”</span></a></h4><time class="din">2026-05-25</time>
+        </li>
+
+
+</ul><script>_showDynClickBatch(['dynclicks_u14_18509','dynclicks_u14_18559','dynclicks_u14_18535','dynclicks_u14_18549','dynclicks_u14_18526','dynclicks_u14_18507'],[18509,18559,18535,18549,18526,18507],"wbnews", 1866965740)</script>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="homec">
+
+
+    <div class="homec-a ca overhide">
+      <div class="ctit uani fadeInUp"><img src="images/22/ct1.png" alt="" class="imgMargin"></div>
+      <div class="wp flex pore">
+        <div class="intit uani fadeInUp"><h4><span>探索</span><em class="bel">Explore</em></h4> <a href="ts.htm" class="inmor arr"><span>查看更多</span></a></div>
+      
+          <div class="picNew picNew1 uani fadeInUp" data-wow-delay=".2s">
+           <a href="http://news.hust.edu.cn/info/1003/58673.htm" target="_blank" class="bg-mask zi3"><div class="pic"><span class="a" style="background-image: url(/__local/8/F6/ED/ECD5EA725D9A1DEE8A76369FC25_B1799AD6_61A34.png);"><img src="/__local/8/F6/ED/ECD5EA725D9A1DEE8A76369FC25_B1799AD6_61A34.png" alt="" class="none"></span></div>
+                  <div class="txt"><h4 class="eclips">集成电路学院臧剑锋唐瀚川团队取得超凝胶传感器最新成果</h4></div></a>
+             <div class="bg"></div>
+          </div>
+     <div class="list">
+        <ul class="flex hovlist1">   
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1003/58673.htm" target="_blank" data-src="/__local/8/F6/ED/ECD5EA725D9A1DEE8A76369FC25_B1799AD6_61A34.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">集成电路学院臧剑锋唐瀚川团队取得超凝胶传感器最新成果</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".2s"><a href="http://news.hust.edu.cn/info/1003/58658.htm" target="_blank" data-src="/__local/9/43/29/3AA9DC2512AD03EE2349C82BBEF_A04A4AE8_6F7D6.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">集成电路学院杨蕊缪向水团队在光子概率计算领域取得新成果</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".3s"><a href="http://news.hust.edu.cn/info/1003/58657.htm" target="_blank" data-src="/__local/0/47/43/2883DC02C770636D2399DFAE0B7_23B07D45_481CC.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">生命学院张胜民教授等领衔发布《国际组织工程与再生医学共识》</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".4s"><a href="http://news.hust.edu.cn/info/1003/58628.htm" target="_blank" data-src="/__local/C/69/CE/CC111CAC2EA5CD8DF13918A30C6_06630213_D1140.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">国家脉冲强磁场科学中心集成电路学院李学飞缪向水团队在P型单层二硒化钨晶体管研究方面取得新...</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".5s"><a href="http://news.hust.edu.cn/info/1003/58602.htm" target="_blank" data-src="/__local/8/59/EC/3D84FA8DA5E09A70084C9B595BF_7EA4EB37_227FB5.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">机械学院丁汉李文龙团队在科教融合育人方面取得新成果</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".6s"><a href="http://news.hust.edu.cn/info/1003/58599.htm" target="_blank" data-src="/__local/3/3A/B5/C1F3A247BE815F69F47947BB722_150F58E8_2062E.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">化学与化工学院谭必恩团队联合合工大在光催化聚合领域获进展</span></h4></a>
+</li>
+   
+</ul>
+     </div><script>_showDynClickBatch(['dynclicks_u15_18534','dynclicks_u15_18525','dynclicks_u15_18524','dynclicks_u15_18499','dynclicks_u15_18475','dynclicks_u15_18474'],[18534,18525,18524,18499,18475,18474],"wbnews", 1866965740)</script>
+
+      </div>
+    </div>
+
+
+    <div class="homec-a cb overhide">
+      <div class="wp flex pore">
+        <div class="intit uani fadeInUp">
+          <h4><span>求知</span><em class="bel">Seek knowledge</em></h4> <a href="qz.htm" class="inmor arr"><span>查看更多</span></a>
+        </div>
+
+
+        <ul class="list hovlist2 flex ">
+          <li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1008/58676.htm" target="_blank" class="alin_r" data-src="/__local/E/73/A4/8552A546F4ED2AF8EFF56A7A852_D964E875_53C88.jpg"><h4 class="l3"><span class="aline_r">【人文讲座】范明华：“审美眼光”的养成之道</span></h4></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1003/58636.htm" target="_blank" class="alin_r" data-src="/__local/B/B3/77/EB3A42D1D2712778A048499B1A3_44FF2265_50592.jpg"><h4 class="l3"><span class="aline_r">机械工程青年STAR学术论坛第100期举行</span></h4></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1008/58630.htm" target="_blank" class="alin_r" data-src="/__local/E/B6/9B/4114E846941AC1F132EEE479816_9862F9B6_520C3.jpg"><h4 class="l3"><span class="aline_r">【人文讲座】陈水云：断肠声里忆平生——纳兰性德的才情、爱情和友情</span></h4></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1008/58629.htm" target="_blank" class="alin_r" data-src="/__local/E/F6/5E/C843AE01175306AAE252249ED69_ED0303EC_2BAB8.jpg"><h4 class="l3"><span class="aline_r">【人文讲座】刘强：《世说新语》与魏晋风度</span></h4></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1003/58549.htm" target="_blank" class="alin_r" data-src="/__local/F/F2/A4/AE74AE489C3FFE029CB0C68A931_B3739E25_76108.jpg"><h4 class="l3"><span class="aline_r">【华科大金课】许晓东：电子政务</span></h4></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1008/58516.htm" target="_blank" class="alin_r" data-src="/__local/4/EC/8F/1908B076C5FF4EF15B29A64FF94_811B9FB5_2EA1F.jpg"><h4 class="l3"><span class="aline_r">【人文讲座】于赓哲：丹药与隋唐五代政局</span></h4></a></li>
+        
+<script>_showDynClickBatch(['dynclicks_u16_18541','dynclicks_u16_18505','dynclicks_u16_18500','dynclicks_u16_18501','dynclicks_u16_18415','dynclicks_u16_18402'],[18541,18505,18500,18501,18415,18402],"wbnews", 1866965740)</script>
+
+        </ul>
+        <div class="picNew picNew2 uani fadeInUp" data-wow-delay=".2s">
+          
+
+
+       <a href="http://news.hust.edu.cn/info/1008/58676.htm" target="_blank" class="bg-mask zi3"><div class="pic"><span class="a" style="background-image: url(/__local/E/73/A4/8552A546F4ED2AF8EFF56A7A852_D964E875_53C88.jpg);"><img src="/__local/E/73/A4/8552A546F4ED2AF8EFF56A7A852_D964E875_53C88.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclips">【人文讲座】范明华：“审美眼光”的养成之道</h4></div></a>
+         <div class="bg"></div>
+      
+
+<script>_showDynClickBatch(['dynclicks_u17_18541'],[18541],"wbnews", 1866965740)</script>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="homec-a ca overhide">
+      <div class="wp flex pore">
+        
+<div class="intit uani fadeInUp"><h4><span>交流</span><em class="bel">Communication</em></h4> <a href="jl.htm" class="inmor arr"><span>查看更多</span></a></div>
+      
+          <div class="picNew picNew3 uani fadeInUp" data-wow-delay=".2s">
+           <a href="http://news.hust.edu.cn/info/1002/58680.htm" target="_blank" class="bg-mask zi3"><div class="pic"><span class="a" style="background-image: url(/__local/D/88/7A/5A6E5AB6A8F20467EC72345CEAC_B78CF2C9_AF2C4D.png);"><img src="/__local/D/88/7A/5A6E5AB6A8F20467EC72345CEAC_B78CF2C9_AF2C4D.png" alt="" class="none"></span></div>
+                  <div class="txt"><h4 class="eclips">国际肝胆胰协会中国大会第十届学术研讨会举行</h4></div></a>
+             <div class="bg"></div>
+          </div>
+     <div class="list">
+        <ul class="flex hovlist3">   
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://news.hust.edu.cn/info/1002/58680.htm" target="_blank" data-src="/__local/D/88/7A/5A6E5AB6A8F20467EC72345CEAC_B78CF2C9_AF2C4D.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">国际肝胆胰协会中国大会第十届学术研讨会举行</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".2s"><a href="http://news.hust.edu.cn/info/1002/58665.htm" target="_blank" data-src="/__local/F/96/82/8313722A4EB9F080C1E11E116B1_0F73CDBC_750514.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">校领导率团赴瑞士法国进行工作访问</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".3s"><a href="http://news.hust.edu.cn/info/1002/58493.htm" target="_blank" data-src="/__local/3/D1/EC/AA05AA5703796B85DBACCAD7D1B_BED49DDC_D8C12.jpg" class="alin_r">
+<h4 class="l3"><span class="aline_r">我校代表团赴港澳推动科教务实合作</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".4s"><a href="http://news.hust.edu.cn/info/1002/58444.htm" target="_blank" data-src="/__local/C/7C/22/00AC9FA10F7802D6501A38889AA_4FDB9885_21827C.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">学校代表团赴巴西进行工作访问</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".5s"><a href="http://news.hust.edu.cn/info/1002/58357.htm" target="_blank" data-src="/__local/4/B6/77/0F3F10C88DA6B052A71D5423A77_EDE3624C_1A5C03.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">我校举办中新产学研创新论坛</span></h4></a>
+</li>
+   
+<li class="uani fadeInUp" data-wow-delay=".6s"><a href="http://news.hust.edu.cn/info/1002/58356.htm" target="_blank" data-src="/__local/7/AF/C1/4010B50D944EE1DA6F6B62DEC72_9D7476D8_166DD2B.png" class="alin_r">
+<h4 class="l3"><span class="aline_r">校党委书记刘波率团赴新泰进行工作访问</span></h4></a>
+</li>
+   
+</ul>
+     </div>
+     
+<script>_showDynClickBatch(['dynclicks_u18_18558','dynclicks_u18_18557','dynclicks_u18_18418','dynclicks_u18_18372','dynclicks_u18_18314','dynclicks_u18_18373'],[18558,18557,18418,18372,18314,18373],"wbnews", 1866965740)</script>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="homec-c">
+      <div class="wp">
+        <div class="intit  uani fadeInUp"><h4><span>通知公告</span><em class="bel">Notice</em></h4> <a href="tzgg.htm" class="inmor arr"><span>查看更多</span></a></div>
+           <ul class="flex">
+              
+<li class=" uani fadeInUp" data-wow-delay=".1s"><a href="https://one.hust.edu.cn/index.html#act=sems-tp-nup_28585749&typeid=&rid=&contentid=&ownerid=&website=0&pim_id=3810415800356864" class="alin_r"><div class="time din"><time><span>20</span><em>2026-05</em></time></div><div class="txt"><h4 class="l3"><span class="aline_r">“我心中的华科大精神”主题征文通知</span></h4></div></a></li>
+              
+<li class=" uani fadeInUp" data-wow-delay=".2s"><a href="https://one.hust.edu.cn/index.html#act=sems-tp-nup_28585749&typeid=&rid=&contentid=&ownerid=&website=0&pim_id=4883953666449408" class="alin_r"><div class="time din"><time><span>09</span><em>2026-05</em></time></div><div class="txt"><h4 class="l3"><span class="aline_r">关于评选2026年“三育人奖”“三育人积极分子”的通知</span></h4></div></a></li>
+              
+<li class=" uani fadeInUp" data-wow-delay=".3s"><a href="https://one.hust.edu.cn/index.html#act=sems-tp-nup_28585749&typeid=&rid=&contentid=&ownerid=&website=0&pim_id=4172214620610563" class="alin_r"><div class="time din"><time><span>07</span><em>2026-05</em></time></div><div class="txt"><h4 class="l3"><span class="aline_r">学校2026年5月教师学习培训及发展支持服务汇总</span></h4></div></a></li>
+              
+</ul><script>_showDynClickBatch(['dynclicks_u19_18488','dynclicks_u19_18430','dynclicks_u19_18431'],[18488,18430,18431],"wbnews", 1866965740)</script>
+
+      </div>
+    </div>
+  </div>
+
+  <style type="text/css">
+    .homed .ul1 .items .item .inmor {
+      color: #fff;
+      display: flex;}
+
+    /*
+.homed .ul1 .items .item .inmor .clsr-1{fill:#fff;}
+*/
+    .homed .ul1 .items .item .inmor .clsr-2 {
+      stroke: #fff;}
+
+    .homed .ul1 .items .item .inmor .clsr-3,
+    .clsr-4 {
+      stroke: #fff;}
+
+    .homed .ul2 .items .item .pic,
+    .homed .ul2 li.li1 .itemt {
+      border-color: #084C95;}
+
+    .homed .ul2 .items .item:hover .txt {
+      background: #084C95;
+
+      .clsr-4 {
+        stroke: #d20b17 !important;}
+    }
+  </style>
+
+
+  <div class="homed overhide">
+    <div class="wp zi3">
+      <ul class="ul1 flex-left overhide">
+            <li class="uani fadeInUp" data-wow-delay=".1s"><img src="images/22/hzdgst1.png" alt=""></li>
+       <li class="flex-v-center text-m borr zi4 uani fadeInUp" data-wow-delay=".2s"><h4 class="dtit red">
+    <a href="http://news.hust.edu.cn/hkdrw.htm" target="_blank" class="renwu">华科大·人物</a>
+       </h4></li>
+   <li class="uani fadeInUp items flex" data-wow-delay=".3s">
+  
+       
+
+     <div class="item">
+            <a href="http://news.hust.edu.cn/info/1002/58594.htm" target="_blank" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71537)" class="bg-mask"><div class="pic"><span class="a" style="background-image: url(images/tonghao.jpg);"><img src="images/tonghao.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">【青年先锋】童浩：二十载深耕存储领域 ...</h4></div></a>
+         </div>    
+       
+        
+
+     <div class="item">
+            <a href="http://news.hust.edu.cn/info/1002/58529.htm" target="_blank" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71534)" class="bg-mask"><div class="pic"><span class="a" style="background-image: url(images/qinchuan.jpg);"><img src="images/qinchuan.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">【青年先锋】秦川：以原创突破守护生命 ...</h4></div></a>
+         </div>    
+       
+        
+
+     <div class="item">
+            <a href="http://news.hust.edu.cn/info/1002/58574.htm" target="_blank" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71533)" class="bg-mask"><div class="pic"><span class="a" style="background-image: url(images/qingnianmakesizhuyizhepeiyangbantuanzhibu.jpg);"><img src="images/qingnianmakesizhuyizhepeiyangbantuanzhibu.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">【青年先锋】青年马克思主义者培养班团...</h4></div></a>
+         </div>    
+       
+        
+
+     <div class="item">
+            <a href="http://news.hust.edu.cn/info/1007/58544.htm" target="_blank" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71529)" class="bg-mask"><div class="pic"><span class="a" style="background-image: url(images/xiongyuanqing.jpg);"><img src="images/xiongyuanqing.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">“校三标”熊元卿：在微米世界里开拓不...</h4></div></a>
+         </div>    
+       
+        
+
+<div class="item more flex-v-center" style="display:none;"><div class="flex-center"><a href="http://news.hust.edu.cn/hkdrw.htm" target="_blank" class="inmor arr">查看更多</a></div></div>
+</li>
+
+
+
+
+
+
+
+
+      </ul>
+      <ul class="ul2 flex pore overhide">
+
+        <li class="li1 pore uani fadeInUp flex items" data-wow-delay=".1s">
+
+
+          <div class="itemt flex-v-center text-m borl">
+            <h4 class="dtit fff"><a href="http://story.hust.edu.cn/" target="_blank" class="yingxiang">华科大·影像</a></h4>
+          </div>
+                 <div class="item">
+<a href="2026gonghui.mp4" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67398)" class="bg-mask" data-fancybox><div class="pic"><span class="a" style="background-image: url(images/gonghuifengmian.png);"><img src="images/gonghuifengmian.png" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">华科大故事：五一劳动奖章获得者</h4></div></a>
+</div>
+
+
+   <div class="item">
+<a href="teshudeyitangke.mp4" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71188)" class="bg-mask" data-fancybox><div class="pic"><span class="a" style="background-image: url(images/teshudeyitangke2.jpg);"><img src="images/teshudeyitangke2.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">华科大故事：特殊的一堂课</h4></div></a>
+</div>
+
+
+   <div class="item">
+<a href="2026hushijie.mp4" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67136)" class="bg-mask" data-fancybox><div class="pic"><span class="a" style="background-image: url(images/2026hushijie3.jpg);"><img src="images/2026hushijie3.jpg" alt="" class="none"></span></div>
+              <div class="txt"><h4 class="eclip">华科大故事：鲜衣有梦，白衣有责</h4></div></a>
+</div>
+
+
+
+
+
+        </li>
+
+
+
+        <li class="li2 pore flex uani fadeInUp" data-wow-delay=".2s">
+                <div class="items">
+               <div class="itemt flex-v-center text-m borr"><h4 class="dtit red"><a href="zjhkd.htm" class="renwu" target="_blank">华科大·生活</a></h4></div>
+            
+            <div class="item"><a href="zjhkd/hlxy.htm" class="bg-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67435)"><div class="pic"><span class="a" style="background-image: url(images/tiyuhuoli.gif);"><img src="images/tiyuhuoli.gif" alt="" class="none"></span></div>
+             <div class="txt"><h4 class="eclip">活力校园</h4></div></a></div>
+          
+           </div>
+            
+
+
+  <div class="items">
+  
+  
+
+
+
+
+  
+ <div class="item"><a href="zjhkd/fwxx.htm" class="bg-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67467)"><div class="pic"><span class="a" style="background-image: url(images/shishengfuwuzhongxin.JPG);"><img src="images/shishengfuwuzhongxin.JPG" alt="" class="none"></span></div>
+<div class="txt"><h4 class="eclip">服务信息</h4></div></a></div>
+            
+
+
+
+
+  
+
+ <div class="item"><a href="index/sjhkd/a2024.htm" class="bg-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67403)"><div class="pic"><span class="a" style="background-image: url(images/2936e3e8-ea50-4674-9096-f59406f26ed7.jpg);"><img src="images/2936e3e8-ea50-4674-9096-f59406f26ed7.jpg" alt="" class="none"></span></div>
+<div class="txt"><h4 class="eclip">视觉华科大</h4></div></a></div>
+            
+
+
+
+</div>
+
+
+
+
+
+        </li>
+
+
+
+
+
+      </ul>
+    </div>
+  </div>
+  <div class="homee overhide">
+    <div class="hetop zi5">
+      <div class="wp">
+        <div class="intit flex uani fadeInUp">
+          <h4><span>社交媒体</span><em class="bel">Social media</em></h4>
+          <ul class="flex">
+                <li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67494)"><img src="images/i1.png" class="ico"><span class="code"><img src="images/douyina94e0282-080e-45bc-a970-d7d86612d52e.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67140)"><img src="images/i2.png" class="ico"><span class="code"><img src="images/4a63219b-015a-41fb-bf0c-bb4d77e4b417.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67116)"><img src="images/i3.png" class="ico"><span class="code"><img src="images/ewm/BZ.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67143)"><img src="images/i4.png" class="ico"><span class="code"><img src="images/ewm/rmh.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67144)"><img src="images/i5.png" class="ico"><span class="code"><img src="images/ewm/jrtt.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67142)"><img src="images/i6.png" class="ico"><span class="code"><img src="images/ewm/ysph.png" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67148)"><img src="images/i7.png" class="ico"><span class="code"><img src="images/ewm/ppzw.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67145)"><img src="images/i8.png" class="ico"><span class="code"><img src="images/ewm/qe.jpg" alt=""></span></a></li>
+          
+<li><a href="javascript:;" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67150)"><img src="images/i9.png" class="ico"><span class="code"><img src="images/bjh.jpg" alt=""></span></a></li>
+          
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <style type="text/css">
+      .popCode {
+        position: relative;}
+
+      .popCode i {
+        width: 1rem;
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% + .1rem);
+        z-index: 5;
+        background: #fff;
+        transform: translateX(-50%);
+        display: none;}
+
+      .popCode i:before {
+        content: '';
+        border: 10px solid transparent;
+        border-top-color: #fff;
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);}
+
+      .popCode:hover i {
+        display: block;}
+    </style>
+
+
+    <div class="hecon">
+      <div class="wp flex">
+        <div class="aleft flex">
+          <dl class="item item1">
+
+            <dt class="flex-left uani fadeInUp">
+              <h4><i class="swiper-icons swi-weixin"></i>华科大微信</h4> <a href="javascript:;" class="popCode"><span>+
+                  加关注</span><i>    
+<img src="WXH_New.jpg" alt="">
+
+</i></a>
+            </dt>
+                       <dd>
+             <ul>
+               
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="https://mp.weixin.qq.com/s/Lu7hiRWcJXdVwxtWcItnVw" target="_blank" class="bg-mask"><div class="pic"><span class="a" style="background-image: url(/__local/1/CB/82/4C1970A77D752F42042A8F52522_FCFFDF84_45A62.png);"><img src="/__local/1/CB/82/4C1970A77D752F42042A8F52522_FCFFDF84_45A62.png" alt="" class="none"></span></div>
+                   <div class="txt"><h4 class="eclip">教学创新大赛！华科人再获佳绩</h4></div></a></li>
+                   
+<li class="uani fadeInUp" data-wow-delay=".2s"><a href="https://mp.weixin.qq.com/s/5evE7oiAYNR3Y80Y0xD8nQ" target="_blank" class="bg-mask"><div class="pic"><span class="a" style="background-image: url(/__local/9/CA/71/5077768537120CABC4B51D4B14D_DB7AB973_135AFF.png);"><img src="/__local/9/CA/71/5077768537120CABC4B51D4B14D_DB7AB973_135AFF.png" alt="" class="none"></span></div>
+                   <div class="txt"><h4 class="eclip">大咖云集，重磅成果连发！</h4></div></a></li>
+                   
+</ul>
+           </dd><script>_showDynClickBatch(['dynclicks_u25_18548','dynclicks_u25_18547'],[18548,18547],"wbnews", 1866965740)</script>
+
+
+
+
+
+
+
+
+          </dl>
+
+
+
+
+
+
+
+
+          <dl class="item item1">
+
+            <dt class="flex-left uani fadeInUp">
+              <h4><i class="swiper-icons swi-shipinhao"></i>华科大视频号</h4> <a href="javascript:;" class="popCode"><span>+
+                  加关注</span><i>    
+<img src="images/ewm/wxsp.jpg" alt="">
+
+</i></a>
+            </dt>
+
+
+
+            <ul>
+                  
+
+               <li class="uani fadeInUp" data-wow-delay=".1s"><a href="shipin/0521-huakedaweihuayuan.mp4" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71538)" class="bg-mask" target="_blank">
+             <div class="pic" style="height: 5.86rem;"><span class="a" style="background-image: url(shipin/0521-huakedaweihuayuan.jpg);"><img src="shipin/0521-huakedaweihuayuan.jpg" alt="" class="none"></span></div>
+                  <div class="txt"><h4 class="eclip">宿管阿姨的“微花园”</h4></div></a></li>
+                  
+             
+
+
+            </ul>
+
+
+
+          </dl>
+        </div>
+
+
+        <div class="aright">
+          <dl class="item item1">
+
+            <dt class="flex-left uani fadeInUp">
+              <h4><img src="images/qg.png" alt="">学习强国</h4> <a href="javascript:;" class="popCode"><span>+
+                  加关注</span><i>    
+<img src="images/ewm/xxqg.jpg" alt="">
+
+</i></a>
+            </dt>
+
+                        <dd> 
+      
+             <ul>
+               
+
+ 
+ 
+      
+ <li class="uani fadeInUp" data-wow-delay=".1s">
+ 
+ <a href="https://article.xuexi.cn/articles/index.html?art_id=9617228400147938695&source=share&study_style_id=feeds_opaque&reco_id=10393191cea2c0a88479000y&share_to=wx_single&study_share_enable=1&study_comment_disable=0&ptype=0&item_id=9617228400147938695" target="_blank" class="bg-mask">
+ 
+ <div class="pic">
+ 
+ 
+       <span class="a" style="background-image: url(/__local/4/9B/5C/E8DD5F763A57BB137781A09D05E_77881D7B_15067.jpg);"><img src="/__local/4/9B/5C/E8DD5F763A57BB137781A09D05E_77881D7B_15067.jpg" alt="" class="none"></span>
+ 
+ 
+ </div>
+  <div class="txt">
+  <h4 class="eclip">第二届高水平公共卫生学院党建共同体工作研讨会在华科大举行</h4>
+  
+  </div>
+  
+  </a>
+  
+  </li>  
+      
+      
+               
+</ul>
+           </dd><script>_showDynClickBatch(['dynclicks_u29_18532'],[18532],"wbnews", 1866965740)</script>
+
+
+
+
+          </dl>
+
+
+
+          <dl class="item item1">
+
+            <dt class="flex-left uani fadeInUp">
+              <h4><img src="images/wb.png" alt="">华科大微博</h4> <a href="javascript:;" class="popCode"><span>+
+                  加关注</span><i>    
+<img src="images/ewm/wb.jpg" alt="">
+
+</i></a>
+            </dt>
+
+                        <dd> 
+      
+             <ul>
+               
+
+ 
+      
+ <li class="uani fadeInUp" data-wow-delay=".1s">
+ 
+ <a href="https://www.weibo.com/n/%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6?from=feed&loc=at" target="_blank" class="bg-mask">
+ 
+ <div class="pic">
+ 
+ 
+       <span class="a" style="background-image: url(/__local/A/AD/10/91D969C15DA567831FEE9E3D237_51DC551A_1CB8D2.jpg);"><img src="/__local/A/AD/10/91D969C15DA567831FEE9E3D237_51DC551A_1CB8D2.jpg" alt="" class="none"></span>
+ 
+ 
+ </div>
+  <div class="txt">
+  <h4 class="eclip">雨润窗棂 书香随行</h4>
+  
+  </div>
+  
+  </a>
+  
+  </li>  
+      
+      
+               
+</ul>
+           </dd><script>_showDynClickBatch(['dynclicks_u31_18264'],[18264],"wbnews", 1866965740)</script>
+
+          </dl>
+
+
+
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="homef overhide">
+    <div class="wp">
+          <div class="intit uani fadeInUp"><h4><span>专题网站</span><em class="bel">Special website</em></h4> <a href="ztzl.htm" class="inmor arr"><span>查看更多</span></a></div>
+      <ul class="flex-left">
+        
+<li class="uani fadeInUp" data-wow-delay=".1s"><a href="http://focus.hust.edu.cn/" target="_blank" class="trans-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67405)"><span style="color: #db0c19"></span><img src="images/2026xuexijiaoyushuban2.jpg"></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".2s"><a href="http://vr.hust.edu.cn/720v2/player/82" target="_blank" class="trans-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 71254)"><span style="color: #db0c19"></span><img src="images/yunshanghuakedashuban.png"></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".3s"><a href="http://vi.hust.edu.cn/" target="_blank" class="trans-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 70914)"><span style="color: #db0c19"></span><img src="images/zhuantiwangzhanyongtu20240628255.jpg"></a></li>
+        
+<li class="uani fadeInUp" data-wow-delay=".4s"><a href="http://xsyj.hust.edu.cn/" target="_blank" class="trans-mask" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 67646)"><span style="color: #db0c19"></span><img src="images/xiaoshiguanshutu.jpg"></a></li>
+        
+</ul>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <div class="fta">
+      <div class="wp flex">
+        <div class="logoft flex-v-center">
+              
+<a href="https://www.hust.edu.cn/" onclick="_addDynClicks(&#34;wbimage&#34;, 1866965740, 70915)"><img src="images/logo20240628.png"></a>
+
+
+        </div>
+        <div class="linkft">
+
+          <div class="linkft_box swiper-container">
+
+            <ul class="swiper-wrapper">
+              
+  <li class="swiper-slide"><a href="xmxhxg.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59111)" target="_blank"><i style="padding-top: .15rem"><img src="images/fti.png" class="imgMargin" style="height: .4rem"></i><p>校歌　与<br>标识系统</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ <li class="swiper-slide"><a href="info/1278/11675.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59293)" target="_blank"><i class="iconfont"><img src="images/wsxf.png" alt=""></i><p>网上信访</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="http://service.hust.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59106)" target="_blank"><i class="iconfont  icon-fuwu "></i><p>师生服务<br>中心</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="http://www.tjmu.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59105)" target="_blank"><i class="iconfont icon-yiliaofuwu"></i><p>同济医学院</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="http://xsyj.hust.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59104)" target="_blank"><i class="iconfont icon-xiaoshi"></i><p>校史馆</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="https://lib.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59103)" target="_blank"><i class="iconfont icon-tushuguan"></i><p>图书馆</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="http://ar.hust.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59110)" target="_blank"><i class="iconfont   icon-dangan"></i><p>档案馆</p></a></li>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="http://press.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59151)" target="_blank"><i class="iconfont icon-book"></i><p>出版社</p></a></li>
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <li class="swiper-slide"><a href="http://xlzx.hust.edu.cn/" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59292)" target="_blank"><i class="iconfont"><img src="images/linkxl.png" alt=""></i><p>心理健康<br>教育中心</p></a></li>
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="http://mail.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59107)" target="_blank"><i class="iconfont icon-youxiang"></i><p>邮箱登录</p></a></li>
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+  <li class="swiper-slide"><a href="http://xxgk.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59108)" target="_blank"><i class="iconfont icon-xxgk"></i><p>信息公开</p></a></li>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="https://ugs.hust.edu.cn/fwzq/xl.htm" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59109)" target="_blank"><i class="iconfont icon-xiaoli"></i><p>校历</p></a></li>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <li class="swiper-slide"><a href="https://map.hust.edu.cn" onclick="_addDynClicks(&#34;wburl&#34;, 1866965740, 59112)" target="_blank"><i class="iconfont icon-ditu"></i><p>校园地图</p></a></li>
+
+
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ftb">
+      <div class="wp flex">
+        <p>
+          <script language="javascript" src="/system/resource/js/news/mp4video.js"></script>
+<span>地址：湖北省武汉市洪山区珞喻路1037号</span> 
+<span>邮政编码：430074</span> 
+<span>电话：027-87541114</span>
+        </p>
+        <!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+<p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><span>鄂ICP备05003321号-1</span></a>&nbsp; &nbsp; &nbsp;&nbsp;<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42011102000123" target="_blank"><span>鄂公网安备 42011102000123号</span></a> <span><a href="http://bszs.conac.cn/sitename?method=show&id=4FD79F577D9C0994E053012819AC03E9" target="_blank"><img src="images/blue.png" alt="" /></a></span></p>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <!--[if lte IE 9]>
+<script type="text/javascript" src="js/jqie.js"></script>
+<![endif]-->
+  <script type="text/javascript" src="js/set.js"></script>
+
+
+  <script type="text/javascript" src="js/anime.min.js"></script>
+  <script type="text/javascript" src="js/lib5.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/index_sp.js"></script>
+  <script type="text/javascript" src="js/public.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+    $(function () {
+      $(".hovlist1 li").each(function () {
+        var _src = $(this).find('a').data('src')
+        var _href = $(this).find('a').attr('href')
+        var _tit = $(this).find('span').text()
+        $(this).hover(function () {
+          $(".picNew1").find('a').attr('href', _href)
+          $(".picNew1").find('h4').text(_tit)
+          $(".picNew1").find('.a').css('background-image', 'url(' + _src + ')')
+        })
+      })
+
+
+
+
+      $(".hovlist2 li").each(function () {
+        var _src = $(this).find('a').data('src')
+        var _href = $(this).find('a').attr('href')
+        var _tit = $(this).find('span').text()
+        $(this).hover(function () {
+          $(".picNew2").find('a').attr('href', _href)
+          $(".picNew2").find('h4').text(_tit)
+          $(".picNew2").find('.a').css('background-image', 'url(' + _src + ')')
+        })
+      })
+
+      $(".hovlist3 li").each(function () {
+        var _src = $(this).find('a').data('src')
+        var _href = $(this).find('a').attr('href')
+        var _tit = $(this).find('span').text()
+        $(this).hover(function () {
+          $(".picNew3").find('a').attr('href', _href)
+          $(".picNew3").find('h4').text(_tit)
+          $(".picNew3").find('.a').css('background-image', 'url(' + _src + ')')
+        })
+      })
+
+
+    })
+  </script>
+
+
+
+  <script type="text/javascript">
+    $(function () {
+      var swiper1 = new Swiper('.linkft_box', {
+        spaceBetween: 15,
+        slideToClickedSlide: true,
+        loop: true,
+        slidesPerView: 10,
+        autoplay: {
+          delay: 6000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          320: { slidesPerView: 5, },
+          768: { slidesPerView: 10 },
+        },
+      });
+    })
+  </script>
+  <style>
+    .footer .fta .wp {
+      justify-content: space-between;}
+
+    .footer .fta .linkft {
+      width: calc(100% - 5rem);}
+
+    .footer .fta .linkft ul li {
+      margin: 0;}
+
+    @media (max-width: 1100px) {
+      .footer .fta .linkft {
+        width: 100%;}
+    }
+  </style>
+
+
+</body>
+
+</html>
