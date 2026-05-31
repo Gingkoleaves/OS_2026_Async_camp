@@ -16,7 +16,7 @@ pub type AnyError = Box<dyn Error + Send + Sync>;
 
 const STATIC_FILE: &str = "static/uni_chart.txt";
 const MEMORY_SAMPLE_MS: u64 = 10;
-pub const CONCURRENCY: usize = 4;
+pub const CONCURRENCY: usize = 64;
 pub const PROCESS_WORKER_ENV: &str = "TASK1_PROCESS_WORKER_INDEX";
 pub const USER_AGENT: &str = "task1-crawler/0.1";
 
@@ -56,7 +56,13 @@ impl LatencyStats {
     /// Compute latency statistics from a slice of crawl results.
     pub fn from_results(results: &[CrawlResult]) -> Self {
         if results.is_empty() {
-            return Self { min_ms: 0.0, p50_ms: 0.0, p95_ms: 0.0, max_ms: 0.0, avg_ms: 0.0 };
+            return Self {
+                min_ms: 0.0,
+                p50_ms: 0.0,
+                p95_ms: 0.0,
+                max_ms: 0.0,
+                avg_ms: 0.0,
+            };
         }
 
         let mut ms: Vec<f64> = results
@@ -72,7 +78,13 @@ impl LatencyStats {
         let p50_ms = percentile(&ms, 0.50);
         let p95_ms = percentile(&ms, 0.95);
 
-        Self { min_ms, p50_ms, p95_ms, max_ms, avg_ms }
+        Self {
+            min_ms,
+            p50_ms,
+            p95_ms,
+            max_ms,
+            avg_ms,
+        }
     }
 }
 

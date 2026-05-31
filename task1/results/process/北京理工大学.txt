@@ -772,10 +772,10 @@
             <span class="wechat-rt"><a href="xww/wwhd/index.htm" target="_blank;"><img src="images/gb20190805/code.png" alt=""></a></span>
             <div class="wechat-lf">
               <i class="iconfont iconweixin"></i>
-              <span class="wechat-date"><i>05/29</i><strong>2026</strong></span>
+              <span class="wechat-date"><i>05/31</i><strong>2026</strong></span>
               <div class="wechat-txt">
 			  
-                <p class="fpx16"><a href="https://mp.weixin.qq.com/s/5URp_NNuGvDW5hQ2v-M9fg" target="_blank;">加快构建具有北理工风格的哲学社会科学发展新格局！</a></p>
+                <p class="fpx16"><a href="https://mp.weixin.qq.com/s/RJnzIVV4E9kVpT-6-Tfx8w" target="_blank;">等你来电！北理工2026年各招生组联系方式公布！</a></p>
 				
                 <span>公众号id：BIT_1940</span>
               </div>

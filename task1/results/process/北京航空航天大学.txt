@@ -454,6 +454,18 @@
 
 <script language="javascript" src="/system/resource/js/centerCutImg.js"></script><script language="javascript" src="/system/resource/js/ajax.js"></script><div class="slick">
                 <div>
+                <a href="javascript:;" style="background-image: url(/__local/0/81/D0/0A8B2EFC7B558B9C09E0C8D06B2_7C339693_257ACD.jpg);">
+                    <img src="/__local/0/81/D0/0A8B2EFC7B558B9C09E0C8D06B2_7C339693_257ACD.jpg" alt="">
+                    <p></p>
+                </a>
+            </div>
+            <div>
+                <a href="javascript:;" style="background-image: url(/__local/D/8E/63/711DB115D3737BAD3EB54251A53_FEC757D4_2216B7.jpg);">
+                    <img src="/__local/D/8E/63/711DB115D3737BAD3EB54251A53_FEC757D4_2216B7.jpg" alt="">
+                    <p></p>
+                </a>
+            </div>
+            <div>
                 <a href="javascript:;" style="background-image: url(/__local/4/5D/6A/0C54CBE0FF07E992E294007E413_CD66EF2E_817473.png);">
                     <img src="/__local/4/5D/6A/0C54CBE0FF07E992E294007E413_CD66EF2E_817473.png" alt="">
                     <p></p>
@@ -472,24 +484,13 @@
                 </a>
             </div>
             <div>
-                <a href="javascript:;">
-                    <video poster="/__local/8/2A/7A/B037AF0BE3C10B49E243A4B77BE_CDDF6FF9_436AB.jpg" src="/__local/0/5E/79/F03453135E5729BA817591224D5_76E648E7_286AF5D.mp4?e=.mp4" muted="true"></video>
-                </a>
-            </div>
-            <div>
                 <a href="http://news.buaa.edu.cn/info/1003/68271.htm" target="_blank" style="background-image: url(/__local/3/71/0C/294E24B1A7E62E4CC7C6FEE80B2_6431F932_BDAB6.jpg);">
                     <img src="/__local/3/71/0C/294E24B1A7E62E4CC7C6FEE80B2_6431F932_BDAB6.jpg" alt="">
                     <p></p>
                 </a>
             </div>
-            <div>
-                <a href="javascript:;" style="background-image: url(/__local/3/DE/1E/B5FEF28E1A0A56B439BB7DEF633_F656250F_AD9B7.jpg);">
-                    <img src="/__local/3/DE/1E/B5FEF28E1A0A56B439BB7DEF633_F656250F_AD9B7.jpg" alt="">
-                    <p></p>
-                </a>
-            </div>
 </div>
-<div class="banner-wqhg"><a href="index/wqhg.htm">往期回顾</a></div><script>_showDynClickBatch(['dynclicks_u11_7648','dynclicks_u11_7604','dynclicks_u11_7584','dynclicks_u11_7507','dynclicks_u11_7060','dynclicks_u11_7061'],[7648,7604,7584,7507,7060,7061],"wbnews", 2050882420)</script>
+<div class="banner-wqhg"><a href="index/wqhg.htm">往期回顾</a></div><script>_showDynClickBatch(['dynclicks_u11_7751','dynclicks_u11_7750','dynclicks_u11_7648','dynclicks_u11_7604','dynclicks_u11_7584','dynclicks_u11_7060'],[7751,7750,7648,7604,7584,7060],"wbnews", 2050882420)</script>
 </div>
 
     <div class="index">
@@ -1097,7 +1098,7 @@
 
 
 
-<a href="https://mp.weixin.qq.com/s/uwxoORBpQVRDeNIrQf_3Og" class="s4-item1 s4-item1_gzh" target="_blank">
+<a href="https://mp.weixin.qq.com/s/yF5mWb_y6JUKDqNNiwjWgw" class="s4-item1 s4-item1_gzh" target="_blank">
     <div class="pic pic_play">
         <div style="background-image: url(/__local/B/89/DC/214E302FB223F987E310670A841_7F371DEE_7990.jpg);"></div>
     </div>
@@ -1107,13 +1108,13 @@
         </h3>
         
         <h3>
-            <p>重磅！全国最美科技工作者，北航桂海潮！</p>
+            <p>喜报！多位北航教师获全国创新争先奖！</p>
         </h3>
     </div>
 </a>
 
 
-<script>_showDynClickBatch(['dynclicks_u22_7740'],[7740],"wbnews", 2050882420)</script>
+<script>_showDynClickBatch(['dynclicks_u22_7749'],[7749],"wbnews", 2050882420)</script>
 </li>
     </ul>
 </div>
