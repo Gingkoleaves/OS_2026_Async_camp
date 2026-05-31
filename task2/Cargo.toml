@@ -1,14 +1,9 @@
 [package]
-name = "my_mini_redis"
+name = "task2"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-mini-redis = "0.4"
-bytes = "1"
 futures = "0.3"
-
-[[example]]
-name = "hello-redis"
-path = "examples/hello-redis.rs"
+encoding_rs = "0.8"
