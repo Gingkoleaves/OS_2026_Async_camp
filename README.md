@@ -18,7 +18,7 @@ Weekly report of oscamp in Async project stage
 对比基于进程、线程和协程的三种爬虫程序的性能特征（延时分布、吞吐率和内存开销）；
 参考实现：用户态协程（爬虫）（周积萍）
 
-### 现在结果
+### 当前结果1
 
 在task1下执行cargo run --bin task1 -- --quiet不显示细节地运行
 最终结果如下：4并发
@@ -72,15 +72,19 @@ Weekly report of oscamp in Async project stage
 
 ### 学习任务：通过动态跟踪，分析下面程序的执行流状态变迁过程
 
-Tokio Future
-200行实现绿色线程
-A stack-less Rust coroutine library under 100 LoC
-200行实现协程（books-futures-explained）
+Tokio Future: <https://tokio-zh.github.io/document/going-deeper/futures.html>
+200行实现绿色线程: <https://nkbai.github.io/rust/Futures_Explained_in_200_lines_of_Rust.html>
+A stack-less Rust coroutine library under 100 LoC:<https://blog.aloni.org/posts/a-stack-less-rust-coroutine-100-loc/>
+200行实现协程（books-futures-explained）:<https://www.infoq.com/presentations/rust-2019/>
 已有参考实现
 首都师范大学 王文智：轻量级的操作系统基本调度单位的设计与实现
 实践任务：至少完成一个子任务；
 基于动态跟踪分析的结果，更新对应文档；
 选择一种执行流机制，在其中扩展优先级支持；
+
+### 当前结果2
+
+动态跟踪分析
 
 ## 任务三：内核态协程
 
@@ -90,6 +94,7 @@ A stack-less Rust coroutine library under 100 LoC
 刘轶凡：在星光2的S7小核上独立运行embassy
 电子科技大学 杨长轲：嵌入式异步实时操作系统embassy_preempt
 郑昱可：Embassy Preempt On VisionFive2Ariel OS
+
 实践任务：在QEMU模拟器或星光2开发板上选择一种内核组件，利用异步机制优化性能（提高响应时效和减少内存战胜）和通用性（在多种OS中复用驱动代码）；
 串口驱动
 有线网卡驱动
