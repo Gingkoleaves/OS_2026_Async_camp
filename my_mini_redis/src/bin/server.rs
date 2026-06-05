@@ -1,10 +1,9 @@
-use tokio::net::{TcpListener, TcpStream};
 use mini_redis::{Connection, Frame};
 use std::collections::HashMap;
-use std::sync::{Mutex,Arc};
-use bytes::Bytes;
-use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
+use std::sync::{Arc, Mutex};
+use tokio::net::{TcpListener, TcpStream};
 
 type ShardedDb = Arc<Vec<Mutex<HashMap<String, Vec<u8>>>>>;
 
@@ -27,7 +26,7 @@ async fn main() {
     println!("Listening");
 
     // 使用 hashmap 来存储 redis 的数据
-    let mut db: ShardedDb = new_sharded_db();
+    let db: ShardedDb = new_sharded_db();
 
     loop {
         // 第二个被忽略的项中包含有新连接的 `IP` 和端口信息
@@ -55,7 +54,10 @@ async fn process(socket: TcpStream, db: ShardedDb) {
                 let mut hasher = DefaultHasher::new();
                 cmd.key().hash(&mut hasher);
                 let shard_index = (hasher.finish() as usize) % NUM_SHARDS;
-                db[shard_index].lock().unwrap().insert(cmd.key().to_string(), cmd.value().to_vec());
+                db[shard_index]
+                    .lock()
+                    .unwrap()
+                    .insert(cmd.key().to_string(), cmd.value().to_vec());
                 Frame::Simple("OK".to_string())
             }
             Get(cmd) => {

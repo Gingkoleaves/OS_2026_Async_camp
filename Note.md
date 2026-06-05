@@ -149,6 +149,10 @@ async函数是语法糖，实际上转化为实现了future特征的结构体，
 future提供同步的消息传递模块one_shot【tx开关，rx实现poll】和mpsc，通过.then()等逻辑方法控制不同task相对顺序
 设计风格上，尽量细化每个task而避免一个单独的大task包裹若干task，这样waker唤醒时只需要快速poll小task，不需要在大task中寻找具体引发wake的小task[把task交到exceutor手中而不是自己用task管理]
 
+Runtime模型：
+同步阻塞：并发阻塞线程，难以解决c10k问题[大量client并发]
+同步/异步非阻塞：
+
 #### 200 line future and green thread
 
 接下来介绍一些并发方法：
