@@ -87,7 +87,7 @@ books-futures-explained:<https://www.infoq.com/presentations/rust-2019/>
 
 已完成四种并发模型的 CFQ 优先级调度实现（`task2/`）：
 
-```
+```rs
 src/
 ├── scheduler.rs         ← CfqScheduler<T> 通用核心（BinaryHeap + vruntime）
 ├── thread.rs            ← OS 线程模型 + CfqThreadPool

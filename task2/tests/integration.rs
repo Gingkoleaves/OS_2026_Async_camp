@@ -252,3 +252,73 @@ fn test_cfq_fairness_precision() {
     assert!(ratio > 2.5 && ratio < 3.5,
         "Scheduling ratio {:.2} should approximate weight ratio ~3.05", ratio);
 }
+
+// ---------------------------------------------------------------------------
+// 接近优先级交错测试（验证 CFQ 调度顺序可观测变化）
+// ---------------------------------------------------------------------------
+
+#[test]
+fn test_close_priorities_interleave() {
+    // prio 19: weight=1277, delta ≈ 801,880
+    // prio 20: weight=1024, delta = 1,000,000
+    // prio 21: weight=820,  delta ≈ 1,248,780
+    // 权重比 ~1.25x → 调度会交错，不是严格优先级
+    let mut s: CfqScheduler<&str> = CfqScheduler::new();
+
+    s.push("A(19)", 19);
+    s.push("B(20)", 20);
+    s.push("C(21)", 21);
+
+    let mut order: Vec<&str> = Vec::new();
+    for _ in 0..15 {
+        if let Some(task) = s.pop() {
+            order.push(task);
+            // 获取 priority 用于重新入队
+            let prio = match task {
+                "A(19)" => 19,
+                "B(20)" => 20,
+                "C(21)" => 21,
+                _ => unreachable!(),
+            };
+            s.update_and_push(task, prio, 1_000_000);
+        }
+    }
+
+    println!("Scheduling order with close priorities: {:?}", order);
+    // 验证：三个任务都应被多次调度（不是某一个独占）
+    let a_count = order.iter().filter(|&&t| t == "A(19)").count();
+    let b_count = order.iter().filter(|&&t| t == "B(20)").count();
+    let c_count = order.iter().filter(|&&t| t == "C(21)").count();
+
+    println!("Counts: A(19)={}, B(20)={}, C(21)={}", a_count, b_count, c_count);
+
+    // A (prio 19, weight 1277) 应被调度最多
+    assert!(a_count > b_count, "A(19) should run more than B(20)");
+    assert!(b_count > c_count, "B(20) should run more than C(21)");
+    // 但差距不应太大（不像 807:1 那样）
+    assert!(c_count >= 2, "C(21) should not be starved, got {}", c_count);
+}
+
+#[test]
+fn test_stackless_close_priorities_interleave() {
+    // 用 CpuFuture + CfqExecutor 验证接近优先级的交错调度
+    let mut executor = CfqExecutor::new();
+
+    // 三个任务都需要 8 次 poll，每次忙等 200us
+    // 权重比 ~1.25x → 高优先级先完成，但中间会有交错
+    executor.submit(19, CpuFuture::with_work(101, 8, 200));
+    executor.submit(21, CpuFuture::with_work(103, 8, 200));
+    executor.submit(20, CpuFuture::with_work(102, 8, 200));
+
+    let results = executor.run();
+    assert_eq!(results.len(), 3);
+    println!("Stackless close-prio results: {:?}", results);
+
+    // 高优先级 (19) 应先完成
+    let pos_19 = results.iter().position(|r| r.1 == 101).unwrap();
+    let pos_20 = results.iter().position(|r| r.1 == 102).unwrap();
+    let pos_21 = results.iter().position(|r| r.1 == 103).unwrap();
+
+    assert!(pos_19 < pos_20, "prio 19 should finish before prio 20");
+    assert!(pos_20 < pos_21, "prio 20 should finish before prio 21");
+}
