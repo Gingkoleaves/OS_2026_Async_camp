@@ -151,23 +151,85 @@ future提供同步的消息传递模块one_shot【tx开关，rx实现poll】和m
 
 Runtime模型：
 同步阻塞：并发阻塞线程，难以解决c10k问题[大量client并发]
-同步/异步非阻塞：
+同步/异步非阻塞：executor内轮询poll所有task，tasks为空时sleep等待
+runtime分为Executor->Timer->Reactor,前者包括后者
+当executor为空，executor调用park()把运行权传递到Timer，Timer计算最近的超时任务和剩余可sleep时间 timeout，把timeout传递给Reactor，Reactor通过mio触发系统调用epoll(arg=timeout)一边等待就绪信息，一边等待timeouut到期
+以上三者分别运行在thread中【多线程tokio下】，从reactor开始向上传递自己的handle[一个消息通道]，允许通过handle发送指令；handle存储在TLS中【不存储在进程空间，因为不希望非tokio线程获取handle；不存储在stack因为这需要函数体显式传参，如果多层task就需要大量传参】；单线程tokio下，executor、timer和reactor轮流工作，总是听在reactor的epoll，用TLS避免borrow-check、统一api、防止runtime内启动新的runtime
+TLS线程本地存储：考虑线程的地址空间，有进程内各线程共享的全局变量，还有自己栈上的函数的局部变量；TLS提供了一段内存，让线程内所有函数都可以访问，线程间隔离
 
-#### 200 line future and green thread
+Tokio的网络模型：TCP&UDP
+tokio的网络类型是基于轮询的异步模型，Reactor响应epoll触发对应waker
+
+**总结**：可以用Event-loop协作调度来统一 green-thread、无栈协程和call-back；都是维护若干任务，等待waker唤醒指定任务【修改task状态/将task放入就绪队列】，然后执行并重新sleep；不同任务通过上述方式协作式调度
+
+#### 200 line future
 
 接下来介绍一些并发方法：
 
 线程:操作系统提供
 简单易用，但是系统线程的堆栈大，且系统有其他任务，切换可能比较慢
 
-green-thread：在系统提供的thread内部建立若干用户态的子线程，各自拥有开始很小但允许动态增长的栈，所有green-thread共享heap和地址空间
-在用户态维护一个runtime负责切换
+green-thread：在系统提供的thread内部建立若干用户态的子线程[实际上只需要维护context和各green-thread的闭包，在单个thread内实现执行流的转换]，各自拥有开始很小但允许动态增长的栈，所有green-thread共享heap和地址空间
+在用户态维护一个main-thread上运行runtime负责切换；通过在green-thread的私有栈上存储需要它运行的函数的地址，配合rsp在ret时的行为，实现交换执行流
 
 基于回调的方法：基于回调的方法背后的整个思想就是保存一个指向一组指令的指针，这些指令我们希望以后在以后需要的时候运行
-优点是易于实现，没有上下文切换，内存开销较低
-缺点是回调嵌套调用带来内存需求，另外由于需要回调，比较难写
+优点是易于实现，没有上下文切换，内存开销较低；缺点是回调嵌套调用带来内存需求，另外由于需要回调，比较难写
+在runtime中维护sender/receiver和一个< id,cbf>hashmap，耗时任务最终通过sender发送id，表示本任务运行完成，下一个运行cbf函数[cbf函数往往不耗时，在main-thread上进行]
+
 引入promise作为一种解决回调复杂性的方法【类似future】
+promise简化回调的格式，通过.then()传递；promise处于以下三种状态之一: pending、fulfilled 或 rejected；可以将promise视为若干子promise，当子任务状态从pending更改为fulfilled或rejected就继续执行
+js的promise是early-evaluate的，一旦被创建则立刻执行
 
-无栈协程
+Rust的future实现：无栈协程
+leaf-future和non-leaf-future：leaf-future是真正等待的资源，例如tcpstream；non-leaf-future指的是用async创建的Future，通常由await一系列leaf-future构成，是可以保存状态以便暂停和继续的状态机
+rust提供了future-trait定义，async和await关键字来形成匿名状态机的机制，和Context、waker定义[poll函数中使用cx.waker.wake()；这为底层驱动提供统一的唤醒格式]
+poll中处在await之间的代码运行在executor线程上【和callback-func在main-thread上运行cbf很相似】；为了避免这一点，可以把整个task发送到另一个线程，并视为leaf-future，避免cpu密集任务占用execotor轮询tasks
 
-可以用Event-loop协作调度来统一 green-thread、无栈协程和call-back；都是维护若干任务，等待waker唤醒指定任务【修改task状态/将task放入就绪队列】，然后执行并重新sleep；不同任务通过上述方式协作式调度
+Waker：包含一个data指针、一个vtable虚函数表[trait指针也类似；只需要vtable内的函数了解data的字段分布即可，这就是为什么trait-obj不需要了解实际struct字段]
+waker的本质是手搓的trait-obj，但是不希望收到trait的限制【trait一般只能Box dyn trait或Arc dyn trait使用，waker希望高可变】：两个8byte指针，一个指向任务数据，一个指向包含waker函数的vtable;[实际上任何fatptr都是如此，可以通过std::mem::transmute把由两个ptr构成的结构体【需要符合repr(C)】转换为任意指定fatptr类型]
+vtable的前3格有约定，分别是drop函数、vatble的dentry数量size，alignment字节数
+通过启动一个拥有waker的thread，可以在thread完全不受tokio-runtime控制的情况下，wake指定的tokio异步任务；允许在异步runtime中嵌入同步线程
+
+Generateor与async
+generator函数允许暂停恢复的函数，内部用Yield暂停并用resume恢复，类似现在的rust await模型【一种无栈协程、状态机】【与await的区别是，yield在返回Yielded状态时也携带值，await在返回pending是不携带值】
+rust的future0.1使用Combinators组合future任务，接近回调，所以带来内存开销【回调时要保持所有链条上闭包的空间，而无栈协程/生成器只需要保留最大的即可】
+在引入pin之前，于闭包内使用yield将其转化为生成器，通过.resume()得到返回状态Completed/Yielded【注意resume返回的值是阶段性成果，generator内部可以维护多个状态，在不同状态返回不同值的枚举类型Yield(type)】
+为了允许跨await/yield的引用【这需要在future结构体内保存一个变量和对他的引用[而rust需要描述引用的生命周期，但不支持描述自引用的生命周期[必须用裸指针]，只支持使用外部传入的生命周期]，否则就要用Arc包裹所有涉及引用的变量，或者用Combinator链式移动所有权】
+
+引入Pin解决自引用导致状态不一致：Pin限制获取mut&，规避了swap两个future导致的**safe下自引用地址错误**
+一般用Pin包裹&mut独占可变引用，此时只能通过pin得到可变引用【需要通过变量遮蔽，让pin对象代替原对象，防止drop pin释放可变引用偷跑】
+Pin与结构体字段_marker: PhantomPinned配合，对于没有_marker的结构体，允许通过Pin得到mut引用；反之则不允许[这个检查发生在编译期]；只有_marker没有用；限制方法参数为Pin<& muttype>，则限制获取type的mut引用，除非通过unsafe
+增加marker字段和impl !Unpin是效果类似的：marker字段是0字节的!unpin对象，传染到结构体[只要一个结构体中包含了任何一个 !Unpin 的字段，整个结构体就会自动变成 !Unpin]；impl !Unpin显式声明
+需要把Generator的resume方法实现为接受Pin<&mut self>,这可以通过调用Pin的as_mut()实现；在resume内部用unsafe获取self对象的可变引用；Pin阻止的是get_mut返回&mut [impl Generator的类型]；实际上避免直接操作结构体，而总是通过Pin实现
+
+> 堆分配与栈分配：把原本在stack上建立future对象移动到heap上，保证自引用不会因函数传参而不一致
+> 将一个!UnPin的指向栈上的指针固定需要unsafe,在stack上只能在unsafe{}内从指定引用新建Pin
+> 将一个!UnPin的指向堆上的指针固定,不需要unsafe,可以直接使用Box::Pin从指定引用新建Pin[相当于移动到堆上]
+> Pin保证从值被固定到被删除的那一刻起一直存在。 而在Drop实现中，您需要一个可变的 self 引用，这意味着在针对固定类型实现 Drop 时必须格外小心：不要在drop中把数据移动，这会引发自引用不一致
+
+Rust的Waker内部维护裸的wake-data和VTABLE的地址[运行时提供]，至少需要提供clone、drop、wake三种函数；用于规定waker的传递格式，在poll中通过waker调用VTABLE中的函数
+park的工作：EventQueue为空时，让主线程park进入sleep状态；有waker被调用时unpark继续运行
+
+#### 200 line stack-less routine
+
+> async函数是有函数体的，就是组装一个future对象并box::pin它返回
+
+确实很简短，基本只通过rust的async语法把clossure打包为future，放入executor的queue，连reactor都没有，executor只是轮询，waker基本是空实现
+
+#### Rust's Journey to Async/await
+
+沿着rust的发展，聊聊并行并发和异步
+
+> 人们经常把异步计算和并行计算、并发计算混为一谈。这三个概念的定义常常被混淆。为了明确起见，并行计算是指能够同时执行多个任务。并发编程是指能够执行多个任务，但不能同时进行。异步编程实际上与这两者都无关，它是一种完全不同的方法。让我们更深入地探讨一下
+> 协作式多任务处理和抢占式多任务处理。协作式多任务处理是指所有任务必须相互协作才能异步运行。每个任务自行决定何时愿意放弃特定资源，让其他任务取而代之;在不可信的系统中，通常需要抢占式多任务处理，但这样做也会增加一些开销、复杂性和其他问题。如果系统中只有可靠的参与者，那么协作式多任务处理可能更合适一些
+> 绿色线程也称为 N:M 或 M:N 线程,指的是将一定数量的自身任务映射到操作系统线程上；green-thread的优势除了更小的stack[相比thread]，也有因为运行在用户态，所以可以了解并优先处理程序的细节以及程序各个部分的运行方式【反过来，也向os隐藏了这些信息】；此外，当你调用 C 代码时，C 需要一个实际的栈。当你需要在绿色线程的栈和原生系统的栈之间切换时，这会引入一些开销；绿色线程确实存在一个很大的缺点：调用 C 代码时速度会变慢，因为c的stack往往极重
+> 同步且阻塞的优势在于它非常简单直接，但性能极差[loop pollin]，因此它从来都不是一个可行的选择;异步且非阻塞的好处在于[waker-polling]，你无需改变代码编写方式。你只需像往常一样编写代码，就能获得性能提升，因为运行时会在底层执行常规操作g
+
+Rust1.0决定抛弃green-thread，只实现基础的1：1系统线程，但是这导致高IO难以处理；这里引入了evented IO【inspired by Nginx】：
+事件驱动型 I/O (evented I/O)，允许你创建事件，并为每个事件注册一个处理程序，然后在事件实际发生时触发该处理程序；不需要多个线程，因为事件循环本身就是一个单线程，负责处理所有这些操作，同时大部分操作都处于休眠状态
+
+future和promise的不同：前者是lazy依靠poll，后者是立刻开始工作的通过then接听结果
+
+为了实现在裸机上使用future，原本future0.1将context参数存储到TLS中，在future0.2中转为了显式参数context；原本存在future-trait的相关类型Error因为设计future只用于网络io，后来发现可以作为更广泛用途不会出现error就取消了只保留output类型
+
+引入async/await作为编译形成pin匿名结构体保护跨await点的机制，极大简化了书写难度【跨await的项的生命周期】，降低内存压力【跨await项需要分配到heap保证存在】；后置.await的诞生也经历曲折

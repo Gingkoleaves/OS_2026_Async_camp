@@ -73,9 +73,10 @@ Weekly report of oscamp in Async project stage
 ### 学习任务：通过动态跟踪，分析下面程序的执行流状态变迁过程
 
 Tokio Future: <https://tokio-zh.github.io/document/going-deeper/futures.html>
-200行实现绿色线程: <https://nkbai.github.io/rust/Futures_Explained_in_200_lines_of_Rust.html>
+200行实现绿色线程:<https://zjp-cn.github.io/os-notes/green-thread.html>
+200行实现协程序：<https://nkbai.github.io/rust/Futures_Explained_in_200_lines_of_Rust.html>
 A stack-less Rust coroutine library under 100 LoC:<https://blog.aloni.org/posts/a-stack-less-rust-coroutine-100-loc/>
-200行实现协程（books-futures-explained）:<https://www.infoq.com/presentations/rust-2019/>
+books-futures-explained:<https://www.infoq.com/presentations/rust-2019/>
 已有参考实现
 首都师范大学 王文智：轻量级的操作系统基本调度单位的设计与实现
 实践任务：至少完成一个子任务；
@@ -84,7 +85,37 @@ A stack-less Rust coroutine library under 100 LoC:<https://blog.aloni.org/posts/
 
 ### 当前结果2
 
-动态跟踪分析
+已完成四种并发模型的 CFQ 优先级调度实现（`task2/`）：
+
+```
+src/
+├── scheduler.rs         ← CfqScheduler<T> 通用核心（BinaryHeap + vruntime）
+├── thread.rs            ← OS 线程模型 + CfqThreadPool
+├── callback.rs          ← 回调模型 + CFQ 调度器
+├── green_thread.rs      ← 有栈协程 + CFQ 上下文切换
+├── stackless_coroutiners.rs ← 无栈协程 + CfqExecutor
+├── main.rs              ← 统一入口（--model thread|callback|green|stackless|all）
+└── lib.rs               ← 库根
+
+tests/
+└── integration.rs       ← 跨模型公平性测试（10 tests）
+```
+
+**CFQ 调度核心：**
+
+- 优先级 → 权重映射表（参考 Linux `prio_to_weight`，40 级，相邻比 ≈ 1.25x）
+- `vruntime += time_slice * 1024 / weight`
+- `BinaryHeap` 按 vruntime 排序，每次选取最小 vruntime 任务
+- 新任务初始 vruntime = 当前 min_vruntime（防饿死）
+- 相同 vruntime 时按权重排序（高权重优先）
+
+**测试结果：** 58 tests passed (24 unit × 2 + 10 integration)，0 failures，0 warnings
+
+> CFQ 将任务分为三个大类（Scheduling Classes）：
+> Real-Time (RT, 实时)：拥有绝对最高优先级，只要它有请求，立刻处理。
+> Best-Effort (BE, 尽力而为)：最常用的普通类，内部又细分为 0-7 八个优先级等级。
+> Idle (空闲)：最低级，只有当系统完全没事干时才给它服务。
+> 在最通用的 Best-Effort 类里，优先级高（等级 0）的任务和优先级低（等级 7）的任务，在红黑树里是平等排队的。但是！当轮到某个队列执行时，高优先级队列能够霸占磁盘更长的时间（时间片更长），而低优先级队列只能用极短的时间。
 
 ## 任务三：内核态协程
 
@@ -109,3 +140,7 @@ NPU驱动
 北京理工大学 廖东海：ReL4-高性能异步微内核设计与实现
 系统调用
 IPC
+
+### 当前结果
+
+看Embassy文档
