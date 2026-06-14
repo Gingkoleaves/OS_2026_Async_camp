@@ -1,3 +1,5 @@
+#[allow(dead_code)]
+
 fn program_main() {
     println!("So we start the program here!");
     set_timeout(200, || {
@@ -12,6 +14,7 @@ fn program_main() {
     println!("While our tasks are executing we can do other stuff instead of waiting.");
 }
 
+#[allow(dead_code)]
 fn main() {
     RT.with(|rt| rt.run(program_main));
 }

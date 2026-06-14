@@ -249,12 +249,10 @@ impl Reactor {
     fn wake(&mut self, id: usize) {
         self.tasks
             .get_mut(&id)
-            .map(|state| {
-                match mem::replace(state, TaskState::Ready) {
-                    TaskState::NotReady(waker) => waker.wake(),
-                    TaskState::Finished => panic!("Called 'wake' twice on task: {}", id),
-                    _ => unreachable!(),
-                }
+            .map(|state| match mem::replace(state, TaskState::Ready) {
+                TaskState::NotReady(waker) => waker.wake(),
+                TaskState::Finished => panic!("Called 'wake' twice on task: {}", id),
+                _ => unreachable!(),
             })
             .unwrap();
     }
@@ -304,6 +302,7 @@ pub struct CpuFuture {
 }
 
 impl CpuFuture {
+    #[allow(dead_code)]
     pub fn new(id: usize, iterations: usize) -> Self {
         CpuFuture {
             id,
@@ -371,7 +370,10 @@ pub fn run_example() {
     let r2 = block_on(task2);
     let r3 = block_on(task3);
 
-    println!("All reactor tasks completed: r1={}, r2={}, r3={}", r1, r2, r3);
+    println!(
+        "All reactor tasks completed: r1={}, r2={}, r3={}",
+        r1, r2, r3
+    );
     reactor.lock().map(|mut r| r.close()).unwrap();
 }
 
