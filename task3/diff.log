@@ -1,0 +1,726 @@
+diff --git a/example/Cargo.toml b/example/Cargo.toml
+index 56d6cb864..9e25126e3 100644
+--- a/example/Cargo.toml
++++ b/example/Cargo.toml
+@@ -86,6 +86,14 @@ harness = false
+ name = "prio_test"
+ harness = false
+ 
++[[bin]]
++name = "rr_test"
++test = false
++
++[[bin]]
++name = "mutex_test"
++test = false
++
+ 
+ [dependencies]
+ cortex-m = { version = "0.7.7", optional = true }
+@@ -104,6 +112,7 @@ embassy-preempt-log = { path = "../modules/embassy-preempt-log" }
+ embassy-preempt-platform = { path = "../modules/embassy-preempt-platform"}
+ embassy-preempt-mem = { path = "../modules/embassy-preempt-mem" }
+ embassy-preempt-macros = { path = "../modules/embassy-preempt-macros" }
++embassy-preempt-event = { path = "../modules/embassy-preempt-event" }
+ 
+ cortex-m-semihosting = { version = "0.5" }
+ 
+@@ -179,4 +188,4 @@ ch32v307wcu6 = ["qingke", "embassy-preempt-platform/ch32v307wcu6", "dep:qingke-r
+ riscv64 = ["dep:riscv"]
+ jh7110 = ["riscv64", "embassy-preempt-platform/jh7110", "logs", "log-uart"]
+ 
+-qemu-virt = ["riscv64", "embassy-preempt-platform/qemu-virt" ]
+\ No newline at end of file
++qemu-virt = ["riscv64", "embassy-preempt-platform/qemu-virt", "logs", "log-uart"]
+\ No newline at end of file
+diff --git a/modules/embassy-preempt-event/src/lib.rs b/modules/embassy-preempt-event/src/lib.rs
+index edcab6bf8..41fb64cec 100644
+--- a/modules/embassy-preempt-event/src/lib.rs
++++ b/modules/embassy-preempt-event/src/lib.rs
+@@ -49,6 +49,8 @@ pub struct OS_EVENT {
+     pub OSEventType: OS_EVENT_TYPE,         /* Type of event control block (see OS_EVENT_TYPE_xxxx)    */
+     pub OSEventPtr: SyncUnsafeCell<Option<OS_EVENT_REF>>, /* Pointer to message or queue structure                   */
+     pub OSEventCnt: u16,         /* Semaphore Count (not used if other EVENT type)          */
++    /// Priority Ceiling Priority for mutex (0xFF = disabled/not a mutex)
++    pub OSEventPCP: u8,
+     pub OSEventGrp: OS_PRIO,        /* Group corresponding to tasks waiting for event to occur */
+     pub OSEventTbl: [OS_PRIO; OS_EVENT_TBL_SIZE as usize], /* List of tasks waiting for event to occur                */
+     #[cfg(feature = "OS_EVENT_NAME_EN")]
+@@ -89,6 +91,7 @@ impl OS_EVENT {
+             OSEventType: OS_EVENT_TYPE::UNUSED,
+             OSEventPtr: SyncUnsafeCell::new(None),
+             OSEventCnt: 0,
++            OSEventPCP: 0xFF,
+             OSEventGrp: 0,
+             OSEventTbl: [0; OS_EVENT_TBL_SIZE as usize],
+             #[cfg(feature = "OS_EVENT_NAME_EN")]
+@@ -159,7 +162,11 @@ static GLOBAL_EVENT_POOL: Once<Option<EventPool>> = Once::new();
+ 
+ /// Get the global event pool
+ pub fn get_global_event_pool() -> &'static Option<EventPool> {
+-    GLOBAL_EVENT_POOL.call_once(|| Some(EventPool::new()))
++    GLOBAL_EVENT_POOL.call_once(|| {
++        let pool = EventPool::new();
++        unsafe { pool.init() };
++        Some(pool)
++    })
+ }
+ 
+ /// Legacy compatibility function that maintains the same API as lazy_static
+@@ -223,6 +230,7 @@ impl EventPool {
+             {
+                 // this event has been free before 
+                 event_ref.OSEventCnt = 0;
++                event_ref.OSEventPCP = 0xFF;
+                 event_ref.OSEventGrp = 0;
+                 event_ref.OSEventTbl = [0; OS_EVENT_TBL_SIZE as usize];
+                 #[cfg(feature = "OS_EVENT_NAME_EN")]
+diff --git a/modules/embassy-preempt-event/src/os_mutex.rs b/modules/embassy-preempt-event/src/os_mutex.rs
+index 8b1378917..bd2924bd0 100644
+--- a/modules/embassy-preempt-event/src/os_mutex.rs
++++ b/modules/embassy-preempt-event/src/os_mutex.rs
+@@ -1 +1,218 @@
++use core::sync::atomic::Ordering;
+ 
++use embassy_preempt_cfg::ucosii::{OSIntNesting, OS_ERR_STATE, OS_DEL_NO_PEND, OS_DEL_ALWAYS};
++use embassy_preempt_executor::GlobalSyncExecutor;
++use embassy_preempt_executor::os_time::OSTimeDly;
++use crate::{GlobalEventPool, OS_EVENT_REF, OS_EVENT_TYPE};
++use crate::{OS_EventTaskWait, OS_EventTaskRdy};
++
++/// Create a mutual exclusion semaphore (mutex).
++///
++/// # Arguments
++/// * `prio_ceil` — Priority Ceiling Priority. Use 0xFF to disable priority ceiling.
++///
++/// # Returns
++/// `Some(OS_EVENT_REF)` on success, `None` if called from ISR or pool exhausted.
++pub fn OSMutexCreate(prio_ceil: u8) -> Option<OS_EVENT_REF> {
++    // See if called from ISR
++    if OSIntNesting.load(Ordering::Acquire) > 0 {
++        return None;
++    }
++    let globaleventpool = GlobalEventPool().as_ref().unwrap();
++    let pevent = globaleventpool.alloc();
++    let mut pevent = pevent?;
++
++    unsafe {
++        if pevent.ptr.is_some() {
++            pevent.OSEventType = OS_EVENT_TYPE::MUTEX;
++            // OSEventCnt = 0xFFFF means mutex is available.
++            // High byte 0xFF = available, Low byte 0xFF = no owner.
++            pevent.OSEventCnt = 0xFFFF;
++            // Store priority ceiling
++            pevent.OSEventPCP = prio_ceil;
++            // Unlink from ECB free list
++            pevent.OSEventPtr.set(None);
++        }
++    }
++    // Initialize to 'nobody waiting' on mutex
++    pevent.OS_EventWaitListInit();
++    return Some(pevent);
++}
++
++/// Acquire a mutex without blocking.
++///
++/// # Returns
++/// - `1` if the mutex was successfully acquired
++/// - `0` if the mutex is already held or event type is wrong
++pub fn OSMutexAccept(mut pevent: OS_EVENT_REF) -> u8 {
++    // Validate event block type
++    if pevent.OSEventType != OS_EVENT_TYPE::MUTEX {
++        return 0;
++    }
++    let result = critical_section::with(|_| {
++        let cnt = pevent.OSEventCnt;
++        // High byte == 0xFF means mutex is available
++        if (cnt >> 8) == 0xFF {
++            let executor = GlobalSyncExecutor().as_ref().unwrap();
++            let cur_prio = unsafe { *executor.OSPrioCur.get_unmut() };
++            // Acquire mutex: store current task's priority in low byte, clear high byte
++            pevent.OSEventCnt = (cur_prio as u16) & 0x00FF;
++            return 1;
++        }
++        return 0;
++    });
++    return result;
++}
++
++/// Wait for a mutex.
++///
++/// # Arguments
++/// * `pevent` — Pointer to the mutex event control block.
++/// * `timeout` — Timeout in ticks (0 = no timeout).
++///
++/// # Returns
++/// `OS_ERR_NONE` on success, or an error code.
++pub fn OSMutexPend(mut pevent: OS_EVENT_REF, timeout: u16) -> OS_ERR_STATE {
++    #[cfg(feature = "OS_ARG_CHK_EN")]
++    {
++        if pevent.ptr.is_none() {
++            return OS_ERR_STATE::OS_ERR_PEVENT_NULL;
++        }
++    }
++    // Validate event block type
++    if pevent.OSEventType != OS_EVENT_TYPE::MUTEX {
++        return OS_ERR_STATE::OS_ERR_EVENT_TYPE;
++    }
++    // See if called from ISR
++    if OSIntNesting.load(Ordering::Acquire) > 0 {
++        return OS_ERR_STATE::OS_ERR_PEND_ISR;
++    }
++    let result = critical_section::with(|_| {
++        // Check if mutex is available (high byte == 0xFF)
++        if (pevent.OSEventCnt >> 8) == 0xFF {
++            let executor = GlobalSyncExecutor().as_ref().unwrap();
++            let cur_prio = unsafe { *executor.OSPrioCur.get_unmut() };
++            // Acquire mutex
++            pevent.OSEventCnt = (cur_prio as u16) & 0x00FF;
++            return OS_ERR_STATE::OS_ERR_NONE;
++        }
++        // Mutex is held — suspend task until mutex is released or timeout occurs
++        OS_EventTaskWait(pevent);
++        // Exiting the ready queue, releasing control of the CPU
++        OSTimeDly(timeout as u64);
++        return OS_ERR_STATE::OS_ERR_NONE;
++    });
++    return result;
++}
++
++/// Release a mutex.
++///
++/// # Returns
++/// `OS_ERR_NONE` on success, `OS_ERR_NOT_MUTEX_OWNER` if the calling task
++/// does not own the mutex, or another error code.
++pub fn OSMutexPost(mut pevent: OS_EVENT_REF) -> OS_ERR_STATE {
++    #[cfg(feature = "OS_ARG_CHK_EN")]
++    {
++        if pevent.ptr.is_none() {
++            return OS_ERR_STATE::OS_ERR_PEVENT_NULL;
++        }
++    }
++    // Validate event block type
++    if pevent.OSEventType != OS_EVENT_TYPE::MUTEX {
++        return OS_ERR_STATE::OS_ERR_EVENT_TYPE;
++    }
++    // Verify ownership: the calling task must own the mutex
++    let executor = GlobalSyncExecutor().as_ref().unwrap();
++    let cur_prio = unsafe { *executor.OSPrioCur.get_unmut() };
++    if (pevent.OSEventCnt & 0xFF) as u8 != cur_prio {
++        return OS_ERR_STATE::OS_ERR_NOT_MUTEX_OWNER;
++    }
++
++    let result = critical_section::with(|_| {
++        // See if any tasks are waiting for the mutex
++        if pevent.OSEventGrp != 0 {
++            // Make the highest-priority waiting task ready
++            OS_EventTaskRdy(pevent);
++            unsafe { GlobalSyncExecutor().as_ref().unwrap().IntCtxSW(); }
++            return OS_ERR_STATE::OS_ERR_NONE;
++        }
++        // No tasks waiting — release mutex
++        pevent.OSEventCnt = 0xFFFF;
++        return OS_ERR_STATE::OS_ERR_NONE;
++    });
++    return result;
++}
++
++/// Delete a mutex.
++///
++/// # Arguments
++/// * `pevent` — Pointer to the mutex event control block.
++/// * `opt` — `OS_DEL_NO_PEND` (delete only if no tasks waiting) or
++///           `OS_DEL_ALWAYS` (delete even if tasks are waiting).
++///
++/// # Returns
++/// Tuple of `(OS_ERR_STATE, OS_EVENT_REF)`. On success, the returned
++/// `OS_EVENT_REF` is default (ptr = None).
++pub fn OSMutexDel(mut pevent: OS_EVENT_REF, opt: u8) -> (OS_ERR_STATE, OS_EVENT_REF) {
++    let mut pevent_return: OS_EVENT_REF = OS_EVENT_REF::default();
++    #[cfg(feature = "OS_ARG_CHK_EN")]
++    {
++        if pevent.ptr.is_none() {
++            return (OS_ERR_STATE::OS_ERR_PEVENT_NULL, pevent);
++        }
++    }
++    // Validate event block type
++    if pevent.OSEventType != OS_EVENT_TYPE::MUTEX {
++        return (OS_ERR_STATE::OS_ERR_EVENT_TYPE, pevent);
++    }
++    // See if called from ISR
++    if OSIntNesting.load(Ordering::Acquire) > 0 {
++        return (OS_ERR_STATE::OS_ERR_DEL_ISR, pevent);
++    }
++    let mut tasks_waiting: bool = false;
++    let result = critical_section::with(|_| {
++        // See if any tasks waiting on mutex
++        if pevent.OSEventGrp != 0 {
++            tasks_waiting = true;
++        } else {
++            tasks_waiting = false;
++        }
++
++        match opt as u32 {
++            OS_DEL_NO_PEND => {
++                if tasks_waiting == false {
++                    GlobalEventPool().as_ref().unwrap().free(pevent);
++                    pevent.OSEventCnt = 0;
++                    pevent_return = OS_EVENT_REF::default();
++                    return OS_ERR_STATE::OS_ERR_NONE;
++                } else {
++                    pevent_return = pevent;
++                    return OS_ERR_STATE::OS_ERR_TASK_WAITING;
++                }
++            }
++            OS_DEL_ALWAYS => {
++                while pevent.OSEventGrp != 0 {
++                    OS_EventTaskRdy(pevent);
++                }
++                GlobalEventPool().as_ref().unwrap().free(pevent);
++                pevent.OSEventCnt = 0;
++                // Reschedule only if task(s) were waiting
++                if tasks_waiting {
++                    unsafe {
++                        GlobalSyncExecutor().as_ref().unwrap().IntCtxSW();
++                    }
++                }
++                pevent_return = OS_EVENT_REF::default();
++                return OS_ERR_STATE::OS_ERR_NONE;
++            }
++            _ => {
++                pevent_return = pevent;
++                return OS_ERR_STATE::OS_ERR_INVALID_OPT;
++            }
++        }
++    });
++    if result != OS_ERR_STATE::OS_ERR_NONE {
++        return (result, pevent_return);
++    }
++    return (OS_ERR_STATE::OS_ERR_NONE, pevent_return);
++}
+diff --git a/modules/embassy-preempt-executor/src/lib.rs b/modules/embassy-preempt-executor/src/lib.rs
+index d33b04e8b..8f8bb765a 100644
+--- a/modules/embassy-preempt-executor/src/lib.rs
++++ b/modules/embassy-preempt-executor/src/lib.rs
+@@ -137,13 +137,33 @@ impl SyncExecutor {
+         // according to the priority of the task, we place the task in the right place of os_prio_tbl
+         // also we will set the corresponding bit in the OSRdyTbl and OSRdyGrp
+         let prio = task.OSTCBPrio as usize;
+-        let tmp = self.OSRdyGrp.get_mut();
+-        *tmp = *tmp | task.OSTCBBitY;
+-        let tmp = self.OSRdyTbl.get_mut();
+-        tmp[task.OSTCBY as usize] |= task.OSTCBBitX;
+-        // set the task in the right place of os_prio_tbl
+-        let tmp = self.os_prio_tbl.get_mut();
+-        tmp[prio] = task;
++        let tbl = self.os_prio_tbl.get_mut();
++        let head = tbl[prio];
++
++        if head.ptr.is_none() {
++            // First task at this priority: self-loop and set bitmap
++            tbl[prio] = task;
++            unsafe {
++                task.OSTCBRdyNext.set(Some(task));
++                task.OSTCBRdyPrev.set(Some(task));
++            }
++            let grp = self.OSRdyGrp.get_mut();
++            *grp |= task.OSTCBBitY;
++            let rdy_tbl = self.OSRdyTbl.get_mut();
++            rdy_tbl[task.OSTCBY as usize] |= task.OSTCBBitX;
++        } else {
++            // Append to the tail of the circular list (insert before head)
++            let prev = unsafe { head.OSTCBRdyPrev.get().unwrap() };
++            unsafe {
++                // prev <-> task
++                prev.OSTCBRdyNext.set(Some(task));
++                task.OSTCBRdyPrev.set(Some(prev));
++                // task <-> head
++                task.OSTCBRdyNext.set(Some(head));
++                head.OSTCBRdyPrev.set(Some(task));
++            }
++            // Bitmap already set for this priority
++        }
+     }
+ 
+     pub unsafe fn set_highrdy(&self) {
+@@ -188,12 +208,41 @@ impl SyncExecutor {
+         // added by liam: we have to make this process in critical section
+         // because the bitmap is shared by all the tasks
+         critical_section::with(|_| {
+-            let tmp = self.OSRdyTbl.get_mut();
+-            tmp[task.OSTCBY as usize] &= !task.OSTCBBitX;
+-            // when the group is empty, we need to set the corresponding bit in the OSRdyGrp to 0
+-            if tmp[task.OSTCBY as usize] == 0 {
+-                let tmp = self.OSRdyGrp.get_mut();
+-                *tmp &= !task.OSTCBBitY;
++            let prio = task.OSTCBPrio as usize;
++            let next = task.OSTCBRdyNext.get();
++            let prev = task.OSTCBRdyPrev.get();
++
++            // Check if task is the only node (self-loop)
++            if next == Some(task) && prev == Some(task) {
++                // Last task at this priority: clear bitmap and os_prio_tbl slot
++                let rdy_tbl = self.OSRdyTbl.get_mut();
++                rdy_tbl[task.OSTCBY as usize] &= !task.OSTCBBitX;
++                if rdy_tbl[task.OSTCBY as usize] == 0 {
++                    let grp = self.OSRdyGrp.get_mut();
++                    *grp &= !task.OSTCBBitY;
++                }
++                let tbl = self.os_prio_tbl.get_mut();
++                tbl[prio] = OS_TCB_REF::default();
++            } else {
++                // Remove from the circular linked list
++                let n = next.unwrap();
++                let p = prev.unwrap();
++                unsafe {
++                    p.OSTCBRdyNext.set(next);
++                    n.OSTCBRdyPrev.set(prev);
++                }
++                // If task was the head, update head to next
++                let tbl = self.os_prio_tbl.get_mut();
++                if tbl[prio] == task {
++                    tbl[prio] = n;
++                }
++                // Bitmap stays set (at least one task remains at this priority)
++            }
++
++            // Clear the task's own list pointers
++            unsafe {
++                task.OSTCBRdyNext.set(None);
++                task.OSTCBRdyPrev.set(None);
+             }
+         });
+     }
+@@ -330,12 +379,9 @@ impl SyncExecutor {
+             task_log!(trace, "interrupt_poll");
+             if *self.OSPrioCur.get_unmut() != OS_TASK_IDLE_PRIO {
+                 self.OSTCBCur.get().needs_stack_save.set(true);
+-                // If the current task will be deleted,
++                // If the current task has been deleted (despawned),
+                 // setting 'needs_stack_save' to 'false' will destroy the stack in PenSV
+-                if self.os_prio_tbl.get_unmut()[*self.OSPrioCur.get_unmut() as usize]
+-                    .ptr
+-                    .is_none()
+-                {
++                if !self.OSTCBCur.get().OSTCBStat.is_spawned() {
+                     self.OSTCBCur.get().needs_stack_save.set(false);
+                 }
+             }
+@@ -457,6 +503,20 @@ impl SyncExecutor {
+         }
+     }
+ 
++    /// Rotate the round-robin ready list: move head forward by one position.
++    /// Only has effect when there are >= 2 tasks at the same priority.
++    /// For a single-task priority (self-loop), this is a no-op.
++    unsafe fn rotate_task_to_tail(&self, task: OS_TCB_REF) {
++        let prio = task.OSTCBPrio as usize;
++        let next = task.OSTCBRdyNext.get();
++        // Self-loop means single task at this priority — nothing to rotate
++        if next == Some(task) {
++            return;
++        }
++        let tbl = self.os_prio_tbl.get_mut();
++        tbl[prio] = next.unwrap();
++    }
++
+     pub unsafe fn single_poll(&'static self, mut task: OS_TCB_REF) {
+         unsafe {
+             task_log!(trace, "single_poll");
+@@ -469,7 +529,20 @@ impl SyncExecutor {
+                 task.needs_stack_save.set(false);
+                 self.timer_queue
+                     .dequeue_expired(get_platform_trait().get_timer_driver().now(), wake_task_no_pend);
+-                self.set_task_unready(task);
++
++                // Round-robin check: if the task is still spawned and has no timer
++                // delay, rotate it to the tail of its priority list so the next
++                // task at the same priority gets a turn. Otherwise, remove it.
++                let is_spawned = task.OSTCBStat.is_spawned();
++                let has_timer = *task.expires_at.get_unmut() != u64::MAX;
++
++                if is_spawned && !has_timer {
++                    // Task is alive and not waiting on a timer — round-robin rotate
++                    self.rotate_task_to_tail(task);
++                } else {
++                    // Task completed or has a timer delay — remove from ready list
++                    self.set_task_unready(task);
++                }
+                 // set the task's stack to None
+                 // check: this seems no need to set it to None as it will always be None
+                 task.OSTCBStkPtr = None;
+diff --git a/modules/embassy-preempt-executor/src/os_task.rs b/modules/embassy-preempt-executor/src/os_task.rs
+index 396fc18f8..b9d31ccea 100644
+--- a/modules/embassy-preempt-executor/src/os_task.rs
++++ b/modules/embassy-preempt-executor/src/os_task.rs
+@@ -116,23 +116,9 @@ fn init_task<F: Future + 'static>(prio: OS_PRIO, future_func: impl FnOnce() -> F
+     if OSIntNesting.load(Ordering::Acquire) > 0 {
+         return OS_ERR_STATE::OS_ERR_TASK_CREATE_ISR;
+     }
+-    // because this func can be call when the OS has started, so need a cs
+-    if critical_section::with(|_cs| {
+-        let executor = GlobalSyncExecutor().as_ref().unwrap();
+-        if executor.prio_exist(prio) {
+-            return true;
+-        } else {
+-            // reserve bit
+-            executor.reserve_bit(prio);
+-            return false;
+-        }
+-    }) {
+-        
+-        task_log!(trace, "the prio is exist");
+-        return OS_ERR_STATE::OS_ERR_PRIO_EXIST;
+-    }
+-        task_log!(trace, "the prio is exist");
+-
++    // Round-robin support: multiple tasks per priority are now allowed.
++    // The linked list in enqueue handles insertion correctly regardless
++    // of whether the priority already has tasks.
+     let err = OS_TASK_STORAGE::init(prio, 0, 0 as *mut (), 0, "".to_string(), future_func);
+     if err == OS_ERR_STATE::OS_ERR_NONE {
+         // check whether the task is created after the OS has started
+@@ -142,12 +128,6 @@ fn init_task<F: Future + 'static>(prio: OS_PRIO, future_func: impl FnOnce() -> F
+                 GlobalSyncExecutor().as_ref().unwrap().IntCtxSW();
+             }
+         }
+-    } else {
+-        critical_section::with(|_cs| {
+-            let executor = GlobalSyncExecutor().as_ref().unwrap();
+-            // clear the reserve bit
+-            executor.clear_bit(prio);
+-        })
+     }
+     return err;
+ }
+@@ -181,10 +161,8 @@ pub fn OSTaskChangePrio(old_prio: OS_PRIO, new_prio:OS_PRIO) -> OS_ERR_STATE {
+     let result = critical_section::with(|_| {
+         let prio_tbl: &mut [OS_TCB_REF; (OS_LOWEST_PRIO + 1) as usize];
+         prio_tbl = executor.os_prio_tbl.get_mut();
+-        // check if the new prio is exist
+-        if prio_tbl[new_prio as usize].ptr.is_some() {
+-            return OS_ERR_STATE::OS_ERR_PRIO_EXIST;
+-        }
++        // Round-robin: new priority can have existing tasks, so skip prio_exist check
++
+         // the OSPrioCur is only valid after os has started
+         if OSRunning.load(Ordering::Acquire) {
+             // see if changing self
+@@ -200,7 +178,7 @@ pub fn OSTaskChangePrio(old_prio: OS_PRIO, new_prio:OS_PRIO) -> OS_ERR_STATE {
+ 
+         if OSRunning.load(Ordering::Acquire) {
+             // if current task change prio itself, must set OSPrioCur to new prio
+-            if old_prio == *executor.OSPrioCur.get_unmut() { 
++            if old_prio == *executor.OSPrioCur.get_unmut() {
+                 unsafe { executor.OSPrioCur.set(new_prio); }
+             }
+         }
+@@ -210,27 +188,73 @@ pub fn OSTaskChangePrio(old_prio: OS_PRIO, new_prio:OS_PRIO) -> OS_ERR_STATE {
+         let x_new = new_prio & 0x07;
+         let bity_new = 1 << y_new;
+         let bitx_new = 1 << x_new;
+-        // remove the old priority from the priority table 
+-        // and place it in the new priority in the priority table
+-        prio_tbl[old_prio as usize].ptr = None;
+-        prio_tbl[new_prio as usize] = _ptcb;
+ 
+         let y_old = _ptcb.OSTCBY;
+         let bity_old = _ptcb.OSTCBBitY;
+         let bitx_old = _ptcb.OSTCBBitX;
+-        // bitmap
+-        let os_rdy_tbl = executor.OSRdyTbl.get_mut();
+-        let os_rdy_grp = executor.OSRdyGrp.get_mut();
+-        // remove the old priority from the ready queue
+-        if os_rdy_tbl[y_old as usize] & bitx_old != 0 {
++
++        // Remove from old priority: splice out of linked list
++        let next = unsafe { _ptcb.OSTCBRdyNext.get() };
++        let prev = unsafe { _ptcb.OSTCBRdyPrev.get() };
++        if next == Some(_ptcb) && prev == Some(_ptcb) {
++            // Self-loop: only task at this priority, clear slot and bitmap
++            prio_tbl[old_prio as usize] = OS_TCB_REF::default();
++            let os_rdy_tbl = executor.OSRdyTbl.get_mut();
+             os_rdy_tbl[y_old as usize] &= !bitx_old;
+             if os_rdy_tbl[y_old as usize] == 0 {
++                let os_rdy_grp = executor.OSRdyGrp.get_mut();
+                 *os_rdy_grp &= !bity_old;
+             }
+-            // add new priority to the ready queue
++        } else {
++            // Splice out of circular list
++            let n = next.unwrap();
++            let p = prev.unwrap();
++            unsafe {
++                p.OSTCBRdyNext.set(next);
++                n.OSTCBRdyPrev.set(prev);
++            }
++            if prio_tbl[old_prio as usize] == _ptcb {
++                prio_tbl[old_prio as usize] = n;
++            }
++            // Old priority still has tasks, clear old bitmap only if needed
++            if prio_tbl[old_prio as usize].ptr.is_none() {
++                let os_rdy_tbl = executor.OSRdyTbl.get_mut();
++                os_rdy_tbl[y_old as usize] &= !bitx_old;
++                if os_rdy_tbl[y_old as usize] == 0 {
++                    let os_rdy_grp = executor.OSRdyGrp.get_mut();
++                    *os_rdy_grp &= !bity_old;
++                }
++            }
++        }
++        unsafe {
++            _ptcb.OSTCBRdyNext.set(None);
++            _ptcb.OSTCBRdyPrev.set(None);
++        }
++
++        // Insert into new priority: add to linked list
++        if prio_tbl[new_prio as usize].ptr.is_none() {
++            // First task at new priority
++            prio_tbl[new_prio as usize] = _ptcb;
++            unsafe {
++                _ptcb.OSTCBRdyNext.set(Some(_ptcb));
++                _ptcb.OSTCBRdyPrev.set(Some(_ptcb));
++            }
++            let os_rdy_grp = executor.OSRdyGrp.get_mut();
+             *os_rdy_grp |= bity_new;
++            let os_rdy_tbl = executor.OSRdyTbl.get_mut();
+             os_rdy_tbl[y_new as usize] |= bitx_new;
++        } else {
++            // Append to tail
++            let head = prio_tbl[new_prio as usize];
++            let tail = unsafe { head.OSTCBRdyPrev.get().unwrap() };
++            unsafe {
++                tail.OSTCBRdyNext.set(Some(_ptcb));
++                _ptcb.OSTCBRdyPrev.set(Some(tail));
++                _ptcb.OSTCBRdyNext.set(Some(head));
++                head.OSTCBRdyPrev.set(Some(_ptcb));
++            }
+         }
++
+         // update the tcb's priority to the new priority
+         _ptcb.OSTCBPrio = new_prio;
+         _ptcb.OSTCBY = y_new;
+@@ -287,13 +311,10 @@ pub fn OSTaskDel(prio: OS_PRIO) -> OS_ERR_STATE {
+         if ptcb.ptr.is_none() {
+             return OS_ERR_STATE::OS_ERR_TASK_NOT_EXIST;
+         }
+-        let os_rdy_tbl = executor.OSRdyTbl.get_mut();
+-        let os_rdy_grp = executor.OSRdyGrp.get_mut();
+-        // remove task from the ready queue
+-        os_rdy_tbl[ptcb.OSTCBY as usize] &= !ptcb.OSTCBBitX;
+-        if os_rdy_tbl[ptcb.OSTCBY as usize] == 0 {
+-            *os_rdy_grp &= !ptcb.OSTCBBitY;
+-        }
++
++        // Remove task from ready list using linked-list-aware removal
++        unsafe { executor.set_task_unready(ptcb); }
++
+         // clearing the expiration time of tasks
+         unsafe{ ptcb.expires_at.set(u64::MAX); }
+ 
+@@ -305,9 +326,6 @@ pub fn OSTaskDel(prio: OS_PRIO) -> OS_ERR_STATE {
+         }
+         OSTaskCtr.fetch_sub(1, Ordering::SeqCst);
+         ptcb.OSTCBStat.despawn();
+-
+-        // remove task from the priority table
+-        prio_tbl[prio as usize].ptr = None;
+         // destroy stack only when os is running
+         if OSRunning.load(Ordering::Acquire) {
+             // if prio == executor.OSTCBCur.get_unmut().OSTCBPrio {
+diff --git a/modules/embassy-preempt-executor/src/state_atomics.rs b/modules/embassy-preempt-executor/src/state_atomics.rs
+index 4e6ffc285..3be00c490 100644
+--- a/modules/embassy-preempt-executor/src/state_atomics.rs
++++ b/modules/embassy-preempt-executor/src/state_atomics.rs
+@@ -51,6 +51,12 @@ impl State {
+         r
+     }
+ 
++    /// Check if the task is still spawned.
++    #[inline(always)]
++    pub fn is_spawned(&self) -> bool {
++        self.spawned.load(Ordering::Acquire)
++    }
++
+     /// Unmark the task as spawned.
+     #[inline(always)]
+     pub fn despawn(&self) {
+diff --git a/modules/embassy-preempt-executor/src/task.rs b/modules/embassy-preempt-executor/src/task.rs
+index 375bfa874..903b13652 100644
+--- a/modules/embassy-preempt-executor/src/task.rs
++++ b/modules/embassy-preempt-executor/src/task.rs
+@@ -35,6 +35,10 @@ pub struct OS_TCB {
+     pub(crate) OSTimerNext: SyncUnsafeCell<Option<OS_TCB_REF>>, /* Pointer to next     TCB in the Timer list                 */
+     pub(crate) OSTimerPrev: SyncUnsafeCell<Option<OS_TCB_REF>>, /* Pointer to previous TCB in the Timer list                 */
+ 
++    // Round-robin ready list: circular doubly-linked list at each priority level
++    pub(crate) OSTCBRdyNext: SyncUnsafeCell<Option<OS_TCB_REF>>,
++    pub(crate) OSTCBRdyPrev: SyncUnsafeCell<Option<OS_TCB_REF>>,
++
+     // the poll fn that will be called by the executor. In the func, a waker will be create.
+     pub(crate) OS_POLL_FN: SyncUnsafeCell<Option<unsafe fn(OS_TCB_REF)>>,
+ 
+@@ -177,6 +181,8 @@ impl<F: Future + 'static> OS_TASK_STORAGE<F> {
+                 },
+                 OSTimerNext: SyncUnsafeCell::new(None),
+                 OSTimerPrev: SyncUnsafeCell::new(None),
++                OSTCBRdyNext: SyncUnsafeCell::new(None),
++                OSTCBRdyPrev: SyncUnsafeCell::new(None),
+                 OS_POLL_FN: SyncUnsafeCell::new(None),
+                 #[cfg(feature = "OS_EVENT_EN")]
+                 OSTCBEventPtr: SyncUnsafeCell::new(None),
+diff --git a/modules/embassy-preempt-platform/archs/riscv64-rt/src/lib.rs b/modules/embassy-preempt-platform/archs/riscv64-rt/src/lib.rs
+index fe5799044..ff97637db 100644
+--- a/modules/embassy-preempt-platform/archs/riscv64-rt/src/lib.rs
++++ b/modules/embassy-preempt-platform/archs/riscv64-rt/src/lib.rs
+@@ -66,6 +66,7 @@
+ 
+ #![no_std]
+ #![feature(naked_functions_rustic_abi)]
++#![feature(asm_cfg)]
+ 
+ #[macro_use]
+ extern crate embassy_preempt_log;
+@@ -74,34 +75,29 @@ extern crate embassy_preempt_log;
+ // 模块声明
+ // ============================================================================
+ 
+-mod trap;
+ mod handlers;
+-mod timer;
+-mod start;
+-mod stack;
+ mod panic;
++mod stack;
++mod start;
++mod timer;
++mod trap;
+ 
+ // ============================================================================
+ // 公共导出
+ // ============================================================================
+ 
+ // Trap 处理
+-pub use trap::{TrapFrame, CONTEXT_STACK_SIZE, __trap_entry, MachineEnvCall};
+-
+ // Handler 回调和分发
+ pub use handlers::{register_ipi_callback, register_timer_callback, TimerInterruptCallback};
+-
+-// 定时器驱动
+-pub use timer::{ClintConfig, ClintTimer};
+-
+-// 栈操作
+-pub use stack::{set_program_stack_pointer, configure_interrupt_stack, get_current_stack_pointer};
+-
+ // ============================================================================
+ // 全局状态
+ // ============================================================================
+-
+ use portable_atomic::AtomicBool;
++// 栈操作
++pub use stack::{configure_interrupt_stack, get_current_stack_pointer, set_program_stack_pointer};
++// 定时器驱动
++pub use timer::{ClintConfig, ClintTimer};
++pub use trap::{MachineEnvCall, TrapFrame, __trap_entry, CONTEXT_STACK_SIZE};
+ 
+ /// 全局标志：当前是否在 trap 处理中
+ ///

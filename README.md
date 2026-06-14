@@ -73,10 +73,15 @@ Weekly report of oscamp in Async project stage
 ### 学习任务：通过动态跟踪，分析下面程序的执行流状态变迁过程
 
 Tokio Future: <https://tokio-zh.github.io/document/going-deeper/futures.html>
+
 200行实现绿色线程:<https://zjp-cn.github.io/os-notes/green-thread.html>
+
 200行实现协程序：<https://nkbai.github.io/rust/Futures_Explained_in_200_lines_of_Rust.html>
+
 A stack-less Rust coroutine library under 100 LoC:<https://blog.aloni.org/posts/a-stack-less-rust-coroutine-100-loc/>
+
 books-futures-explained:<https://www.infoq.com/presentations/rust-2019/>
+
 已有参考实现
 首都师范大学 王文智：轻量级的操作系统基本调度单位的设计与实现
 实践任务：至少完成一个子任务；
@@ -121,24 +126,32 @@ tests/
 
 ### 学习任务：通过动态跟踪，分析下面程序的执行流状态变迁过程 embassy（中文版本）
 
-电子科技大学 袁子为、施诺晖：基于Rust异步机制的嵌入式操作系统调度模块embassy_preempt
-刘轶凡：在星光2的S7小核上独立运行embassy
-电子科技大学 杨长轲：嵌入式异步实时操作系统embassy_preempt
-郑昱可：Embassy Preempt On VisionFive2Ariel OS
+embassy<https://embassy.dev/book/>，<https://lighklife.github.io/embassy-cn/>
 
-实践任务：在QEMU模拟器或星光2开发板上选择一种内核组件，利用异步机制优化性能（提高响应时效和减少内存战胜）和通用性（在多种OS中复用驱动代码）；
+电子科技大学 袁子为、施诺晖：基于Rust异步机制的嵌入式操作系统调度模块embassy_preempt<https://www.yuque.com/xyong-9fuoz/hg8kgr/culbvrzfn9qu9lby#AlAhs>
+
+刘轶凡：在星光2的S7小核上独立运行embassy<https://www.yuque.com/xyong-9fuoz/hg8kgr/orddgx677bplf6pl#vM3K0>
+
+电子科技大学 杨长轲：嵌入式异步实时操作系统embassy_preempt<https://www.yuque.com/xyong-9fuoz/hg8kgr/orddgx677bplf6pl#ciNZh>
+
+郑昱可：Embassy Preempt On VisionFive2Ariel OS<https://www.yuque.com/xyong-9fuoz/hg8kgr/cvbvasbkmttrf30m#TxUo2>
+
+### 实践任务：在QEMU模拟器或星光2开发板上选择一种内核组件，利用异步机制优化性能（提高响应时效和减少内存战胜）和通用性（在多种OS中复用驱动代码
+
 串口驱动
-有线网卡驱动
-明扬：异步网卡驱动开发
+
+有线网卡驱动: 明扬：异步网卡驱动开发<https://www.yuque.com/xyong-9fuoz/hg8kgr/orddgx677bplf6pl#OIDDg>
+
 无线网卡驱动
-SD卡驱动
-余泽铖：Starry SD 卡驱动设计
-NPU驱动
-周雨 ：RKNPU技术报告
-调度器
-清华大学 赵方亮：基于软硬协同的任务调度和中断响应研究
-北京理工大学 廖东海：ReL4-高性能异步微内核设计与实现
+
+SD卡驱动: 余泽铖：Starry SD 卡驱动设计<https://www.yuque.com/xyong-9fuoz/hg8kgr/cvbvasbkmttrf30m#LQUxV>
+
+NPU驱动: 周雨 ：RKNPU技术报告<https://www.yuque.com/xyong-9fuoz/hg8kgr/cvbvasbkmttrf30m#H4H9f>
+
+调度器: 清华大学 赵方亮：基于软硬协同的任务调度和中断响应研究<https://www.yuque.com/xyong-9fuoz/hg8kgr/cxnbc2dhznprgaek#CX9e8>、北京理工大学 廖东海：ReL4-高性能异步微内核设计与实现<https://www.yuque.com/xyong-9fuoz/hg8kgr/cxnbc2dhznprgaek#-1>
+
 系统调用
+
 IPC
 
 ### 当前结果

@@ -2,3 +2,6 @@ openspec/
 .claude/
 .vscode/
 .planning/
+
+embassy/
+embassy_preempt/
