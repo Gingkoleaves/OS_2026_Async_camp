@@ -3,5 +3,6 @@ openspec/
 .vscode/
 .planning/
 
+references
 embassy/
 embassy_preempt/

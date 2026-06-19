@@ -9,6 +9,12 @@ mini-redis = "0.4"
 bytes = "1"
 futures = "0.3"
 
+[dev-dependencies]
+
+[[test]]
+name = "integration"
+path = "tests/integration.rs"
+
 [[example]]
 name = "hello-redis"
 path = "examples/hello-redis.rs"
