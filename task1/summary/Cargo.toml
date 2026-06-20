@@ -7,6 +7,14 @@ edition = "2021"
 name = "summary"
 path = "src/main.rs"
 
+[[bin]]
+name = "gt_bench"
+path = "src/bin/gt_bench.rs"
+
+[[bin]]
+name = "tokio_prio_bench"
+path = "src/bin/tokio_prio_bench.rs"
+
 [dependencies]
 task1 = { path = ".." }
 task2 = { path = "../../task2" }
